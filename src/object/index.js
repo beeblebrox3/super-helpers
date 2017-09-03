@@ -81,4 +81,6 @@ module.exports = {
     },
 
     collectionContains: collectionContains,
+
+    flatten: require("./flatten"),
 };
