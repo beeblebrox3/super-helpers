@@ -1,4 +1,14 @@
 {
     "extends": ["eslint:recommended", "google"],
-    "rules": {}
+    "env": {
+        "node": true,
+        "browser": true,
+        "es6": true,
+        "jest": true
+    },
+    "rules": {
+        "quotes": ["warn", "double"],
+        "space-before-function-paren": ["warn", "always"],
+        "arrow-parens": "off"
+    }
 }

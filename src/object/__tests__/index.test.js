@@ -1,7 +1,6 @@
 jest.autoMockOff();
 
-import ObjectHelper from "../index";
-
+const ObjectHelper = require("../index");
 const equals = (actual, expected) => expect(actual).toBe(expected);
 
 const testObject = {
@@ -9,10 +8,10 @@ const testObject = {
         a: {
             b: 1,
             c: 2,
-            d: null
+            d: null,
         },
-        b: 1
-    }
+        b: 1,
+    },
 };
 
 test("Test getFlattened", () => {

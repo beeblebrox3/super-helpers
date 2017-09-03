@@ -1,7 +1,7 @@
 jest.autoMockOff();
 
-import DateHelper from "../index";
-import MockDate from "mockdate";
+const DateHelper = require("../index");
+const MockDate = require("mockdate");
 
 MockDate.set("2016-01-01T00:00:00+00:00", 0);
 
@@ -20,12 +20,12 @@ test("Test beautifySeconds", () => {
         59: ["", "59s"],
         60: ["01m", "01m00s"],
         61: ["01m", "01m01s"],
-        3900: ["1h05m", "1h05m00s"]
+        3900: ["1h05m", "1h05m00s"],
     };
 
     Object.keys(hash).map(function (seconds) {
-        equals(hash[seconds][0], DateHelper.beautifySeconds(seconds, false));
-        equals(hash[seconds][1], DateHelper.beautifySeconds(seconds, true));
+        equals(hash[seconds][0], DateHelper.beautifySeconds(parseInt(seconds, 10), false));
+        equals(hash[seconds][1], DateHelper.beautifySeconds(parseInt(seconds, 10), true));
     });
 });
 
@@ -35,12 +35,12 @@ test("Test beautifyMinutes", () => {
         60: ["1h00m", "1h00m00s"],
         61: ["1h01m", "1h01m00s"],
         3900: ["65h00m", "65h00m00s"],
-        3905: ["65h05m", "65h05m00s"]
+        3905: ["65h05m", "65h05m00s"],
     };
 
     Object.keys(hash).map(function (minutes) {
-        equals(hash[minutes][0], DateHelper.beautifyMinutes(minutes, false));
-        equals(hash[minutes][1], DateHelper.beautifyMinutes(minutes, true));
+        equals(hash[minutes][0], DateHelper.beautifyMinutes(parseInt(minutes, 10), false));
+        equals(hash[minutes][1], DateHelper.beautifyMinutes(parseInt(minutes, 10), true));
     });
 });
 
@@ -55,7 +55,7 @@ test("Test fromBeutyToSeconds", () => {
         "1m1s": 61,
         "01m01s": 61,
         "1h": 3600,
-        "1h0m1s": 3601
+        "1h0m1s": 3601,
     };
 
     Object.keys(hash).map(function (strTime) {
@@ -66,19 +66,19 @@ test("Test fromBeutyToSeconds", () => {
 test("Test daysBetween", () => {
     const testData = [{
         dates: ["2016-01-01", "2016-01-01"],
-        expected: 0
+        expected: 0,
     }, {
         dates: ["2016-01-01", "2016-01-02"],
-        expected: 1
+        expected: 1,
     }, {
         dates: ["2016-02-28", "2016-03-01"],
-        expected: 2
+        expected: 2,
     }, {
         dates: ["2017-02-28", "2017-03-01"],
-        expected: 1
+        expected: 1,
     }, {
         dates: ["2016-01-01", "2015-01-01"],
-        expected: 365
+        expected: 365,
     }];
 
     testData.map(function (data) {

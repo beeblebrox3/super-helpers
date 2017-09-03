@@ -6,11 +6,12 @@
  * @param {Object} userFilters object to find
  * @param {Boolean} detailed if true will return an object with deails about the searc
  * @param {Boolean} ignoreCase if true, will ignore case when matching strings
+ * @return {Boolean|Array}
  */
 function collectionContains (collection, userFilters, detailed, ignoreCase) {
     const filters = Object.assign({}, userFilters);
     const details = [];
-    const found =  collection.some((obj) => {
+    const found = collection.some((obj) => {
         const diff = {};
 
         let expectedValue;
@@ -34,13 +35,13 @@ function collectionContains (collection, userFilters, detailed, ignoreCase) {
                 if (!filters[filter](realValue)) {
                     diff[filter] = {
                         expected: "custom validation", // @todo
-                        real: realValue
+                        real: realValue,
                     };
                 }
             } else if (!obj.hasOwnProperty(filter) || expectedValue != realValue) {
                 diff[filter] = {
                     expected: expectedValue,
-                    real: realValue
+                    real: realValue,
                 };
             }
         });
@@ -55,14 +56,14 @@ function collectionContains (collection, userFilters, detailed, ignoreCase) {
 
     return {
         found: found,
-        details: details
+        details: details,
     };
 }
 
 collectionContains.Types = {
     NotEmpty: function (v) {
         return !! v;
-    }
+    },
 };
 
-export default collectionContains;
+module.exports = collectionContains;

@@ -1,6 +1,6 @@
-import collectionContains from "./collectionContains";
+const collectionContains = require("./collectionContains");
 
-export default {
+module.exports = {
     /**
      * Get element from obj by string path
      * Example:
@@ -14,7 +14,7 @@ export default {
      */
     getFlattened: function (path, obj, defaultValue = null) {
         if (typeof path !== "string") {
-            throw "path must be string";
+            throw Error("path must be string");
         }
 
         let i;
@@ -47,7 +47,7 @@ export default {
      * @param {String} path
      * @param {*} newValue
      * @param {Object} obj
-     * @returns {*}
+     * @return {*}
      */
     setFlattened: function (path, newValue, obj) {
         "use strict";
@@ -68,17 +68,17 @@ export default {
     /**
      * Get first key of an object or null if it doesn't have keys
      * @param {Object} obj
-     * @returns {*}
+     * @return {*}
      */
     firstKey: function (obj) {
         "use strict";
 
-        if (obj instanceof Object === false) {
-            throw "obj must be an Object";
+        if (Object.getPrototypeOf(obj) !== Object.prototype) {
+            throw Error("obj must be an Object");
         }
 
         return Object.keys(obj)[0] || null;
     },
 
-    collectionContains: collectionContains
-}
+    collectionContains: collectionContains,
+};

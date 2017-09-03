@@ -1,6 +1,6 @@
 jest.autoMockOff();
 
-import StringHelper from "../index";
+const StringHelper = require("../index");
 
 const equals = (actual, expected) => expect(actual).toBe(expected);
 
@@ -10,7 +10,7 @@ test("Test resolveUrl", () => {
     const hash = {
         "http://google.com": "http://google.com",
         "https://google.com": "https://google.com",
-        "//google.com": "//google.com"
+        "//google.com": "//google.com",
     };
 
     Object.keys(hash).map((url) => {
@@ -26,7 +26,7 @@ test("Test ucfirst", () => {
         "oba": "Oba",
         "oba oba": "Oba oba",
         "": "",
-        "1": "1"
+        "1": "1",
     };
 
     Object.keys(hash).map((word) => {
@@ -40,7 +40,7 @@ test("Test ucwords", () => {
         "oba": "Oba",
         "oba oba": "Oba Oba",
         "": "",
-        "1": "1"
+        "1": "1",
     };
 
     Object.keys(hash).map((word) => {
@@ -54,7 +54,7 @@ test("Test excerpt", () => {
             3: "This...",
             4: "This...",
             5: "This...",
-            7: "This is a..."
+            7: "This is a...",
         },
     };
 

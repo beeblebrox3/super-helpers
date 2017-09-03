@@ -1,14 +1,14 @@
 jest.disableAutomock();
 
-import collectionContains from "../collectionContains"
+const collectionContains = require("../collectionContains")
 
 test("Test Config", () => {
     const datasource = [{
         name: "Jerry Seinfeld",
-        age: 28
+        age: 28,
     },  {
         name: "Cosmo Kramer",
-        age: 33
+        age: 33,
     }];
 
     expect(collectionContains(datasource, {name: "Jerry Seinfeld"})).toBe(true);

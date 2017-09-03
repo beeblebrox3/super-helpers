@@ -1,4 +1,4 @@
-export default {
+module.exports = {
     /**
      * Add basepath if isn't complete
      * Consider a complete url when it contains '//'
@@ -16,7 +16,7 @@ export default {
      *
      * @param {String} url
      * @param {String} basePath basepath to be used, with protocol
-     * @returns {String}
+     * @return {String}
      *
      */
     resolveUrl: function (url, basePath = "") {
@@ -30,7 +30,7 @@ export default {
     /**
      * Makes string capitalized
      * @param {String} string
-     * @returns {string}
+     * @return {string}
      */
     ucfirst: function (string) {
         "use strict";
@@ -41,6 +41,8 @@ export default {
 
     /**
      * @see App.helpers.string.ucfirst
+     * @param {String} string
+     * @return {String}
      */
     capitalize: function (string) {
         return this.ucfirst(string);
@@ -49,7 +51,7 @@ export default {
     /**
      * Makes every word from string capitalized
      * @param {String} string
-     * @returns {string}
+     * @return {string}
      */
     ucwords: function (string) {
         return string.split(" ").map(word => this.ucfirst(word)).join(" ");
@@ -59,9 +61,9 @@ export default {
      * Will crop the text to fit the maxLength provided. Will try to not break any words
      * and add "..." on the end of the string
      *
-     * @param text
-     * @param maxLength
-     * @returns {String}
+     * @param {String} text
+     * @param {Number} maxLength
+     * @return {String}
      */
     excerpt: function (text, maxLength) {
         if (isNaN(maxLength)) {
@@ -74,7 +76,7 @@ export default {
         }
 
         if (typeof text !== "string") {
-            throw "text must be string";
+            throw new Error("text must be string");
         }
 
         if (text.length > maxLength) {
@@ -101,7 +103,7 @@ export default {
     /**
      * generares a UUID
      * Ref: http://stackoverflow.com/questions/105034/create-guid-uuid-in-javascript
-     * @returns {String}
+     * @return {String}
      */
     uuid: function () {
         "use strict";

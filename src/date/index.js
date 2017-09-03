@@ -1,7 +1,7 @@
-export default {
+module.exports = {
     /**
-     * @param {String|Integer} num add a leading 0 to help format dates and times
-     * @returns {String}
+     * @param {String|Number} num add a leading 0 to help format dates and times
+     * @return {String}
      */
     leadingZero: function (num) {
         return `0${num}`.slice(-2);
@@ -17,14 +17,14 @@ export default {
      * beautifyMinutes(3900, true) => 1h05m00s
      * @param {Number} seconds
      * @param {Boolean} showSeconds
-     * @returns {string}
+     * @return {string}
      */
     beautifySeconds: function (seconds, showSeconds = true) {
         let response = "";
         let theTime = {
             hours: 0,
             minutes: 0,
-            seconds: 0
+            seconds: 0,
         };
 
         theTime.hours = ~~(seconds / 3600);
@@ -50,19 +50,19 @@ export default {
      * Works the same way as beautifySeconds, but receive an amount of minutes
      * @param {Number} minutes
      * @param {Boolean} showSeconds
-     * @returns {String}
+     * @return {String}
      */
     beautifyMinutes: function (minutes, showSeconds = true) {
         return this.beautifySeconds(minutes * 60, showSeconds);
     },
 
-    
+
     /**
-     * Receives an duration with the format 00h00m00s and returns the amount 
+     * Receives an duration with the format 00h00m00s and returns the amount
      * of seconds. The inverse of beautifySeconds
-     * 
+     *
      * @param {String} theTime
-     * @returns {Number}
+     * @return {Number}
      */
     fromBeutyToSeconds: function (theTime) {
         let response = 0;
@@ -94,14 +94,14 @@ export default {
         return response;
     },
 
-    
+
     /**
      * Receive two dates and returns the amount of days between them
      * Dates on the format supported by the Date constructor
-     * 
+     *
      * @param {String} startDateString
      * @param {String} endDateString
-     * @returns {Number}
+     * @return {Number}
      */
     daysBetween: function (startDateString, endDateString) {
         const oneDay = 24 * 60 * 60 * 1000;
@@ -115,13 +115,13 @@ export default {
 
     /**
      * Returns the current date on the format: yyyy-mm-dd
-     * @returns {String}
+     * @return {String}
      */
     curdate: () => new Date().toISOString().substr(0, 10),
 
     /**
      * Returns the first day of the current month on the format: yyyy-dd-mm
-     * @returns {String}
+     * @return {String}
      */
     firstDayOfTheMonth: function () {
         const today = new Date();
@@ -133,7 +133,7 @@ export default {
      * It accepts an optional month and year to get the last day of an particular month
      * @param {String} month
      * @param {String} year
-     * @returns {String}
+     * @return {String}
      */
     lastDayOfTheMonth: function (month, year) {
         const today = new Date();
@@ -142,5 +142,5 @@ export default {
         const lastDay = new Date(useYear, useMonth, 0);
 
         return `${useYear}-${this.leadingZero(useMonth)}-${this.leadingZero(lastDay.getDate())}`;
-    }
+    },
 };
