@@ -14,6 +14,6 @@
 </p>
 
 # Super Helpers
-A small collection of helper functions for js developers
+A small collection of helper functions for js developers.
 
-More details soon
+Docs: https://beeblebrox3.github.io/super-helpers/
