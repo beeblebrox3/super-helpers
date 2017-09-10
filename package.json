@@ -1,21 +1,26 @@
 {
-  "name": "super-helpers",
-  "version": "0.0.2",
-  "description": "JavaScript helpers",
-  "main": "src/index.js",
-  "scripts": {
-    "test": "jest --config .jest-config.json",
-    "test-watch": "jest --config .jest-config.json --watch"
-  },
-  "author": "Luís Henrique Faria <luish.faria@gmail.com>",
-  "license": "MIT",
-  "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-jest": "^20.0.3",
-    "babel-preset-es2015": "^6.24.1",
-    "eslint": "^4.6.0",
-    "eslint-config-google": "^0.9.1",
-    "jest": "^20.0.4",
-    "mockdate": "^2.0.2"
-  }
+    "name": "super-helpers",
+    "version": "0.0.2",
+    "description": "JavaScript helpers",
+    "main": "src/index.js",
+    "scripts": {
+        "test": "jest --config .jest-config.json",
+        "test-watch": "jest --config .jest-config.json --watch",
+        "docs-md": "./node_modules/.bin/documentation build src/index.js -f md -o docs/docs.md",
+        "docs-html": "./node_modules/.bin/documentation build src/index.js -f html -o docs",
+        "docs": "npm run docs-html && npm run docs-md",
+        "prepublishOnly": "npm run docs"
+    },
+    "author": "Luís Henrique Faria <luish.faria@gmail.com>",
+    "license": "MIT",
+    "devDependencies": {
+        "babel-core": "^6.26.0",
+        "babel-jest": "^20.0.3",
+        "babel-preset-es2015": "^6.24.1",
+        "documentation": "^5.3.1",
+        "eslint": "^4.6.0",
+        "eslint-config-google": "^0.9.1",
+        "jest": "^20.0.4",
+        "mockdate": "^2.0.2"
+    }
 }

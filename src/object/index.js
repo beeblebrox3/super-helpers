@@ -1,5 +1,4 @@
-const collectionContains = require("./collectionContains");
-
+/** @namespace object */
 module.exports = {
     /**
      * Get element from obj by string path
@@ -11,6 +10,7 @@ module.exports = {
      * @param {Object} obj reference object
      * @param {any} defaultValue value to return if key was not found. Default is null
      * @return {any}
+     * @memberof object
      */
     getFlattened: function (path, obj, defaultValue = null) {
         if (typeof path !== "string") {
@@ -48,6 +48,7 @@ module.exports = {
      * @param {*} newValue
      * @param {Object} obj
      * @return {*}
+     * @memberof object
      */
     setFlattened: function (path, newValue, obj) {
         "use strict";
@@ -69,6 +70,7 @@ module.exports = {
      * Get first key of an object or null if it doesn't have keys
      * @param {Object} obj
      * @return {*}
+     * @memberof object
      */
     firstKey: function (obj) {
         "use strict";
@@ -80,7 +82,7 @@ module.exports = {
         return Object.keys(obj)[0] || null;
     },
 
-    collectionContains: collectionContains,
+    collectionContains: require("./collectionContains"),
 
     flatten: require("./flatten"),
 };

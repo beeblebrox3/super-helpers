@@ -1,3 +1,4 @@
+/** @namespace array */
 module.exports = {
     /**
      * Sort an array of objects by one prop of objects
@@ -5,6 +6,7 @@ module.exports = {
      * @param {String} prop
      * @param {String} direction defines if sort should be asc or desc
      * @return {Array} sorted arrray
+     * @memberof array
      */
     sortByObjectKey: function (data, prop, direction = "asc") {
         if (["asc", "desc"].indexOf(direction) === -1) {
@@ -38,6 +40,7 @@ module.exports = {
      * @param {*} values
      * @param {Array} items
      * @return {Array}
+     * @memberof array
      */
     filterBy: function (key, values, items) {
         return items.filter(item => values.indexOf(item[key]) > -1);

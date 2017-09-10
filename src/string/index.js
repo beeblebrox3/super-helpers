@@ -1,3 +1,4 @@
+/** @namespace string */
 module.exports = {
     /**
      * Add basepath if isn't complete
@@ -17,6 +18,7 @@ module.exports = {
      * @param {String} url
      * @param {String} basePath basepath to be used, with protocol
      * @return {String}
+     * @memberof string
      *
      */
     resolveUrl: function (url, basePath = "") {
@@ -31,6 +33,7 @@ module.exports = {
      * Makes string capitalized
      * @param {String} string
      * @return {string}
+     * @memberof string
      */
     ucfirst: function (string) {
         "use strict";
@@ -43,6 +46,7 @@ module.exports = {
      * @see App.helpers.string.ucfirst
      * @param {String} string
      * @return {String}
+     * @memberof string
      */
     capitalize: function (string) {
         return this.ucfirst(string);
@@ -52,6 +56,7 @@ module.exports = {
      * Makes every word from string capitalized
      * @param {String} string
      * @return {string}
+     * @memberof string
      */
     ucwords: function (string) {
         return string.split(" ").map(word => this.ucfirst(word)).join(" ");
@@ -64,6 +69,7 @@ module.exports = {
      * @param {String} text
      * @param {Number} maxLength
      * @return {String}
+     * @memberof string
      */
     excerpt: function (text, maxLength) {
         if (isNaN(maxLength)) {
@@ -104,6 +110,7 @@ module.exports = {
      * generares a UUID
      * Ref: http://stackoverflow.com/questions/105034/create-guid-uuid-in-javascript
      * @return {String}
+     * @memberof string
      */
     uuid: function () {
         "use strict";
@@ -112,5 +119,5 @@ module.exports = {
             var r = Math.random()*16|0, v = c === "x" ? r : (r&0x3|0x8);
             return v.toString(16);
         });
-    }
-}
+    },
+};

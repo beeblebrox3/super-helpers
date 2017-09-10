@@ -7,6 +7,7 @@
  * @param {Boolean} detailed if true will return an object with deails about the searc
  * @param {Boolean} ignoreCase if true, will ignore case when matching strings
  * @return {Boolean|Array}
+ * @memberof object
  */
 function collectionContains (collection, userFilters, detailed, ignoreCase) {
     const filters = Object.assign({}, userFilters);

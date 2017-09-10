@@ -6,6 +6,7 @@
  * @param {string} [separator="."]
  * @param {string} [prefix=""] All keys will be prefixed with this arg
  * @return {Object}
+ * @memberof object
  */
 function flatten (obj, separator = ".", prefix = "") {
     let res = {};

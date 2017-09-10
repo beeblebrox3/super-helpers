@@ -1,7 +1,9 @@
+/** @namespace date */
 module.exports = {
     /**
      * @param {String|Number} num add a leading 0 to help format dates and times
      * @return {String}
+     * @memberof date
      */
     leadingZero: function (num) {
         return `0${num}`.slice(-2);
@@ -18,6 +20,7 @@ module.exports = {
      * @param {Number} seconds
      * @param {Boolean} showSeconds
      * @return {string}
+     * @memberof date
      */
     beautifySeconds: function (seconds, showSeconds = true) {
         let response = "";
@@ -51,6 +54,7 @@ module.exports = {
      * @param {Number} minutes
      * @param {Boolean} showSeconds
      * @return {String}
+     * @memberof date
      */
     beautifyMinutes: function (minutes, showSeconds = true) {
         return this.beautifySeconds(minutes * 60, showSeconds);
@@ -63,6 +67,7 @@ module.exports = {
      *
      * @param {String} theTime
      * @return {Number}
+     * @memberof date
      */
     fromBeutyToSeconds: function (theTime) {
         let response = 0;
@@ -102,6 +107,7 @@ module.exports = {
      * @param {String} startDateString
      * @param {String} endDateString
      * @return {Number}
+     * @memberof date
      */
     daysBetween: function (startDateString, endDateString) {
         const oneDay = 24 * 60 * 60 * 1000;
@@ -116,12 +122,14 @@ module.exports = {
     /**
      * Returns the current date on the format: yyyy-mm-dd
      * @return {String}
+     * @memberof date
      */
     curdate: () => new Date().toISOString().substr(0, 10),
 
     /**
      * Returns the first day of the current month on the format: yyyy-dd-mm
      * @return {String}
+     * @memberof date
      */
     firstDayOfTheMonth: function () {
         const today = new Date();
@@ -134,6 +142,7 @@ module.exports = {
      * @param {String} month
      * @param {String} year
      * @return {String}
+     * @memberof date
      */
     lastDayOfTheMonth: function (month, year) {
         const today = new Date();
