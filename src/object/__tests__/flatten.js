@@ -28,3 +28,12 @@ test("test flatten function", () => {
     expect(res["d.ee"]).toBe("a");
     expect(res["d.c.a.a.b"]).toBe(1);
 });
+
+test("test flatten function on circular reference (cyclic reference)", () => {
+    let a = {};
+    let b = {};
+    a.b = b;
+    b.a = a;
+
+    expect(() => flatten(a)).toThrow();
+});
