@@ -15,7 +15,9 @@ function flatten (obj, separator = ".", prefix = "") {
 
     Object.keys(obj).forEach(index => {
         const val = obj[index];
-        const newIndex = prefix.length > 0 ? `${prefix}${separator}${index}` : index;
+        const newIndex = prefix.length > 0
+            ? `${prefix}${separator}${index}`
+            : index;
 
         if (isObject(val) || Array.isArray(val)) {
             const objF = flatten(val, separator, newIndex);
