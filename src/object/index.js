@@ -85,4 +85,6 @@ module.exports = {
     collectionContains: require("./collectionContains"),
 
     flatten: require("./flatten"),
+
+    isCyclic: require("./isCyclic"),
 };
