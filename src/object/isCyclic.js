@@ -2,8 +2,8 @@
  * Check if any given object has some kind of cyclic reference.
  *
  * @param {Object} obj the source to be checked
- *
  * @return {boolean}
+ * @memberof object
  */
 const isCyclic = obj => {
     let seenObjects = [];
