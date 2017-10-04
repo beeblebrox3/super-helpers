@@ -27,6 +27,7 @@
     -   [firstKey](#firstkey)
     -   [collectionContains](#collectioncontains)
     -   [flatten](#flatten)
+-   [isCyclic](#iscyclic)
 
 ## array
 
@@ -290,3 +291,13 @@ Example: flatten({a: {b: 2}}) will return {"a.b": 2}
 -   `prefix` **[string](#string)** All keys will be prefixed with this arg (optional, default `""`)
 
 Returns **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** 
+
+## isCyclic
+
+Check if any given object has some kind of cyclic reference.
+
+**Parameters**
+
+-   `obj` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** the source to be checked
+
+Returns **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** 
