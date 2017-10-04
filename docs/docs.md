@@ -27,7 +27,7 @@
     -   [firstKey](#firstkey)
     -   [collectionContains](#collectioncontains)
     -   [flatten](#flatten)
--   [isCyclic](#iscyclic)
+    -   [isCyclic](#iscyclic)
 
 ## array
 
@@ -292,7 +292,7 @@ Example: flatten({a: {b: 2}}) will return {"a.b": 2}
 
 Returns **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** 
 
-## isCyclic
+### isCyclic
 
 Check if any given object has some kind of cyclic reference.
 

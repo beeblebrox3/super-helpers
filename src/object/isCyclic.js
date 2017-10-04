@@ -5,7 +5,7 @@
  * @return {boolean}
  * @memberof object
  */
-const isCyclic = obj => {
+function isCyclic(obj) {
     let seenObjects = [];
 
     const detect = obj => {
@@ -26,6 +26,6 @@ const isCyclic = obj => {
     };
 
     return detect(obj);
-};
+}
 
 module.exports = isCyclic;
