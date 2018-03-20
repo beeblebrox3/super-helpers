@@ -17,27 +17,31 @@ function flatten(obj, separator = ".", prefix = "") {
     if (isCyclic(obj)) {
         throw new Error(CIRCULAR_REF_ERROR_MSG);
     }
-
-    let res = {};
-
+    
     const isObject = (r) => Object.getPrototypeOf(r) === Object.prototype;
+    
+    const _flatten = (obj, separator = ".", prefix = "") => {
+        let res = {};
 
-    Object.keys(obj).forEach(index => {
-        const val = obj[index];
-        const newIndex = prefix.length > 0
-            ? `${prefix}${separator}${index}`
-            : index;
+        Object.keys(obj).forEach(index => {
+            const val = obj[index];
+            const newIndex = prefix.length > 0
+                ? `${prefix}${separator}${index}`
+                : index;
 
-        if (isObject(val) || Array.isArray(val)) {
-            const objF = flatten(val, separator, newIndex);
-            res = Object.assign(res, objF);
-            return;
-        }
+            if (isObject(val) || Array.isArray(val)) {
+                const objF = _flatten(val, separator, newIndex);
+                res = Object.assign(res, objF);
+                return;
+            }
 
-        res[newIndex] = val;
-    });
+            res[newIndex] = val;
+        });
 
-    return res;
+        return res;
+    };
+
+    return _flatten(obj, separator, prefix);
 }
 
 module.exports = flatten;
