@@ -9,7 +9,7 @@ const isObject = obj => typeof obj === "object";
  */
 function isCyclic(obj) {
     const seenObjects = [];
-    const isSeen = isObject(obj) && seenObjects.includes(obj);
+    const isSeen = obj => isObject(obj) && seenObjects.includes(obj);
 
     const detect = obj => {
         if (isSeen(obj)) {
