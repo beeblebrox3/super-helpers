@@ -1,3 +1,5 @@
+const isObject = obj => typeof obj === "object";
+
 /**
  * Check if any given object has some kind of cyclic reference.
  *
@@ -6,19 +8,19 @@
  * @memberof object
  */
 function isCyclic(obj) {
-    let seenObjects = [];
+    const seenObjects = [];
+    const isSeen = isObject(obj) && seenObjects.includes(obj);
 
     const detect = obj => {
-        if (obj && typeof obj === "object") {
-            if (seenObjects.includes(obj)) {
-                return true;
-            }
+        if (isSeen(obj)) {
+            return true;
+        }
 
-            seenObjects.push(obj);
-            for (const key in obj) {
-                if (obj.hasOwnProperty(key) && detect(obj[key])) {
-                    return true;
-                }
+        seenObjects.push(obj);
+
+        for (const key in Object.keys(obj)) {
+            if (detect(obj[key])) {
+                return true;
             }
         }
 
