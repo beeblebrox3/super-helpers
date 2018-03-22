@@ -20,7 +20,7 @@ function flatten(obj, separator = ".", prefix = "") {
 
     let res = {};
 
-    const isObject = (r) => Object.getPrototypeOf(r) === Object.prototype;
+    const isObject = (r) => r !== undefined && r !== null && Object.getPrototypeOf(r) === Object.prototype;
 
     Object.keys(obj).forEach(index => {
         const val = obj[index];

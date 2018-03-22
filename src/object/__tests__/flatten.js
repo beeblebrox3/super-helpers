@@ -37,3 +37,22 @@ test("test flatten function on circular reference (cyclic reference)", () => {
 
     expect(() => flatten(a)).toThrow();
 });
+
+test("test flatten function with null and undefined", () => {
+    const input = {
+        a: 1,
+        b: null,
+        c: undefined,
+        d: {
+            e: 2,
+            f: undefined,
+        },
+    };
+
+    const res = flatten(input);
+    expect(res["a"]).toBe(1);
+    expect(res["b"]).toBe(null);
+    expect(res["c"]).toBe(undefined);
+    expect(res["d.e"]).toBe(2);
+    expect(res["d.f"]).toBe(undefined);
+});
