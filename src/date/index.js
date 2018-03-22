@@ -4,6 +4,7 @@ module.exports = {
      * @param {String|Number} num add a leading 0 to help format dates and times
      * @return {String}
      * @memberof date
+     * @private
      */
     leadingZero: function (num) {
         return `0${num}`.slice(-2);

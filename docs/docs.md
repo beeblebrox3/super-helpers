@@ -6,7 +6,6 @@
     -   [sortByObjectKey](#sortbyobjectkey)
     -   [filterBy](#filterby)
 -   [date](#date)
-    -   [leadingZero](#leadingzero)
     -   [beautifySeconds](#beautifyseconds)
     -   [beautifyMinutes](#beautifyminutes)
     -   [fromBeutyToSeconds](#frombeutytoseconds)
@@ -33,43 +32,47 @@
 
 ### sortByObjectKey
 
-Sort an array of objects by one prop of objects
+Sort a collection of objects by one of the keys
 
 **Parameters**
 
--   `data` **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)** 
+-   `data` **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)>** 
 -   `prop` **[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** 
--   `direction` **[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** defines if sort should be asc or desc (optional, default `"asc"`)
+-   `direction` **[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** defines if sort should be asc or desc
 
-Returns **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)** sorted arrray
+**Examples**
+
+```javascript
+const data = [{id: 1, name: "foo"}, {id: 2, name: "abc"}]
+sortByObjectKey(data, "name")
+// output will be [{id: 2, name: "abc"}, {id: 1, name: "foo"}]
+```
+
+Returns **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)>** sorted arrray
 
 ### filterBy
 
-Filter objects from array that has key value in values
-Example:
-var arr = [{a: 1}, {a: 2}, {a: 3}]
-App.helpers.array.filterBy("a", [1, 3], arr);
-
-The output will be:
-[{a: 1}, {a: 3}]
+Filter a collection of objects by one prop
 
 **Parameters**
 
 -   `key` **[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** 
 -   `values` **any** 
--   `items` **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)** 
+-   `items` **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)>** 
 
-Returns **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)** 
+**Examples**
+
+```javascript
+const arr = [{a: 1}, {a: 2}, {a: 3}]
+filterBy("a", [1, 3], arr);
+
+// The output will be:
+// [{a: 1}, {a: 3}]
+```
+
+Returns **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)>** 
 
 ## date
-
-### leadingZero
-
-**Parameters**
-
--   `num` **([String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) \| [Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number))** add a leading 0 to help format dates and times
-
-Returns **[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** 
 
 ### beautifySeconds
 
