@@ -22,12 +22,12 @@
     -   [uuid](#uuid)
 -   [object](#object)
     -   [getFlattened](#getflattened)
+    -   [getFirstFlattened](#getfirstflattened)
     -   [setFlattened](#setflattened)
     -   [firstKey](#firstkey)
     -   [collectionContains](#collectioncontains)
     -   [flatten](#flatten)
     -   [isCyclic](#iscyclic)
--   [getFirstFlattened](#getfirstflattened)
 
 ## array
 
@@ -243,6 +243,20 @@ Then you get the number 1.
 
 Returns **any** 
 
+### getFirstFlattened
+
+-   **See: getFlattened**
+
+Receives a list of paths and use getFlattened to get the first existent value
+
+**Parameters**
+
+-   `paths` **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)>** 
+-   `obj` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** 
+-   `defaultValue` **any**  (optional, default `null`)
+
+Returns **any** 
+
 ### setFlattened
 
 -   **See: getFlattened
@@ -305,17 +319,3 @@ Check if any given object has some kind of cyclic reference.
 -   `obj` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** the source to be checked
 
 Returns **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** 
-
-## getFirstFlattened
-
--   **See: getFlattened**
-
-Receives a list of paths and use getFlattened to get the first existent value
-
-**Parameters**
-
--   `paths` **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)>** 
--   `obj` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** 
--   `defaultValue` **any**  (optional, default `null`)
-
-Returns **any** 

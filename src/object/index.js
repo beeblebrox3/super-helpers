@@ -44,6 +44,7 @@ module.exports = {
      * @param {any} defaultValue
      * @return {any}
      * @see getFlattened
+     * @memberof object
      */
     getFirstFlattened: function (paths, obj, defaultValue = null) {
         if (!Array.isArray(paths)) {
