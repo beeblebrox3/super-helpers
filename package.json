@@ -1,8 +1,15 @@
 {
     "name": "super-helpers",
-    "version": "0.0.4",
     "description": "JavaScript helpers",
+    "version": "0.0.4",
+    "homepage": "https://github.com/beeblebrox3/super-helpers",
+    "issues": "https://github.com/beeblebrox3/super-helpers/issues",
+    "license": "MIT",
+    "author": "Luís Henrique Faria <luish.faria@gmail.com> (https://github.com/beeblebrox3)",
     "main": "src/index.js",
+    "directories": {
+        "doc": "./docs"
+    },
     "scripts": {
         "test": "jest --config .jest-config.json",
         "test-watch": "jest --config .jest-config.json --watch",
@@ -11,16 +18,13 @@
         "docs": "npm run docs-html && npm run docs-md",
         "prepublishOnly": "npm run docs"
     },
-    "author": "Luís Henrique Faria <luish.faria@gmail.com>",
-    "license": "MIT",
     "devDependencies": {
-        "babel-core": "^6.26.0",
-        "babel-jest": "^20.0.3",
-        "babel-preset-es2015": "^6.24.1",
-        "documentation": "^5.3.1",
-        "eslint": "^4.6.0",
+        "documentation": "^6.2.0",
+        "eslint": "^4.19.1",
         "eslint-config-google": "^0.9.1",
-        "jest": "^20.0.4",
+        "istanbul-api": "^1.3.1",
+        "istanbul-reports": "^1.3.0",
+        "jest": "^22.4.3",
         "mockdate": "^2.0.2"
     }
 }

@@ -2,32 +2,32 @@
 
 ### Table of Contents
 
--   [array](#array)
-    -   [sortByObjectKey](#sortbyobjectkey)
-    -   [filterBy](#filterby)
--   [date](#date)
-    -   [beautifySeconds](#beautifyseconds)
-    -   [beautifyMinutes](#beautifyminutes)
-    -   [fromBeutyToSeconds](#frombeutytoseconds)
-    -   [daysBetween](#daysbetween)
-    -   [curdate](#curdate)
-    -   [firstDayOfTheMonth](#firstdayofthemonth)
-    -   [lastDayOfTheMonth](#lastdayofthemonth)
--   [string](#string)
-    -   [resolveUrl](#resolveurl)
-    -   [ucfirst](#ucfirst)
-    -   [capitalize](#capitalize)
-    -   [ucwords](#ucwords)
-    -   [excerpt](#excerpt)
-    -   [uuid](#uuid)
--   [object](#object)
-    -   [getFlattened](#getflattened)
-    -   [getFirstFlattened](#getfirstflattened)
-    -   [setFlattened](#setflattened)
-    -   [firstKey](#firstkey)
-    -   [collectionContains](#collectioncontains)
-    -   [flatten](#flatten)
-    -   [isCyclic](#iscyclic)
+-   [array][1]
+    -   [sortByObjectKey][2]
+    -   [filterBy][3]
+-   [date][4]
+    -   [beautifySeconds][5]
+    -   [beautifyMinutes][6]
+    -   [fromBeutyToSeconds][7]
+    -   [daysBetween][8]
+    -   [curdate][9]
+    -   [firstDayOfTheMonth][10]
+    -   [lastDayOfTheMonth][11]
+-   [string][12]
+    -   [resolveUrl][13]
+    -   [ucfirst][14]
+    -   [capitalize][15]
+    -   [ucwords][16]
+    -   [excerpt][17]
+    -   [uuid][18]
+-   [object][19]
+    -   [getFlattened][20]
+    -   [getFirstFlattened][21]
+    -   [setFlattened][22]
+    -   [firstKey][23]
+    -   [collectionContains][24]
+    -   [flatten][25]
+    -   [isCyclic][26]
 
 ## array
 
@@ -37,9 +37,9 @@ Sort a collection of objects by one of the keys
 
 **Parameters**
 
--   `data` **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)>** 
--   `prop` **[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** 
--   `direction` **[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** defines if sort should be asc or desc
+-   `data` **[Array][27]&lt;[Object][28]>** 
+-   `prop` **[String][29]** 
+-   `direction` **[String][29]** defines if sort should be asc or desc
 
 **Examples**
 
@@ -49,7 +49,7 @@ sortByObjectKey(data, "name")
 // output will be [{id: 2, name: "abc"}, {id: 1, name: "foo"}]
 ```
 
-Returns **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)>** sorted arrray
+Returns **[Array][27]&lt;[Object][28]>** sorted arrray
 
 ### filterBy
 
@@ -57,9 +57,9 @@ Filter a collection of objects by one prop
 
 **Parameters**
 
--   `key` **[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+-   `key` **[String][29]** 
 -   `values` **any** 
--   `items` **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)>** 
+-   `items` **[Array][27]&lt;[Object][28]>** 
 
 **Examples**
 
@@ -71,7 +71,7 @@ filterBy("a", [1, 3], arr);
 // [{a: 1}, {a: 3}]
 ```
 
-Returns **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)>** 
+Returns **[Array][27]&lt;[Object][28]>** 
 
 ## date
 
@@ -87,10 +87,10 @@ beautifyMinutes(3900, true) => 1h05m00s
 
 **Parameters**
 
--   `seconds` **[Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
--   `showSeconds` **[Boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)**  (optional, default `true`)
+-   `seconds` **[Number][30]** 
+-   `showSeconds` **[Boolean][31]**  (optional, default `true`)
 
-Returns **[string](#string)** 
+Returns **[string][32]** 
 
 ### beautifyMinutes
 
@@ -99,10 +99,10 @@ Returns **[string](#string)**
 
 **Parameters**
 
--   `minutes` **[Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
--   `showSeconds` **[Boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)**  (optional, default `true`)
+-   `minutes` **[Number][30]** 
+-   `showSeconds` **[Boolean][31]**  (optional, default `true`)
 
-Returns **[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+Returns **[String][29]** 
 
 ### fromBeutyToSeconds
 
@@ -111,9 +111,9 @@ of seconds. The inverse of beautifySeconds
 
 **Parameters**
 
--   `theTime` **[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+-   `theTime` **[String][29]** 
 
-Returns **[Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
+Returns **[Number][30]** 
 
 ### daysBetween
 
@@ -122,22 +122,22 @@ Dates on the format supported by the Date constructor
 
 **Parameters**
 
--   `startDateString` **[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** 
--   `endDateString` **[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+-   `startDateString` **[String][29]** 
+-   `endDateString` **[String][29]** 
 
-Returns **[Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
+Returns **[Number][30]** 
 
 ### curdate
 
 Returns the current date on the format: yyyy-mm-dd
 
-Returns **[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+Returns **[String][29]** 
 
 ### firstDayOfTheMonth
 
 Returns the first day of the current month on the format: yyyy-dd-mm
 
-Returns **[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+Returns **[String][29]** 
 
 ### lastDayOfTheMonth
 
@@ -146,10 +146,10 @@ It accepts an optional month and year to get the last day of an particular month
 
 **Parameters**
 
--   `month` **[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** 
--   `year` **[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+-   `month` **[String][29]** 
+-   `year` **[String][29]** 
 
-Returns **[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+Returns **[String][29]** 
 
 ## string
 
@@ -159,8 +159,8 @@ Add basepath if isn't complete
 Consider a complete url when it contains '//'
 
 Examples of complete urls:
-<http://google.com>
-<https://google.com>
+[http://google.com][33]
+[https://google.com][34]
 //google.com
 
 Examples of incomplete urls:
@@ -171,10 +171,10 @@ users/create
 
 **Parameters**
 
--   `url` **[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** 
--   `basePath` **[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** basepath to be used, with protocol (optional, default `""`)
+-   `url` **[String][29]** 
+-   `basePath` **[String][29]** basepath to be used, with protocol (optional, default `""`)
 
-Returns **[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+Returns **[String][29]** 
 
 ### ucfirst
 
@@ -182,9 +182,9 @@ Makes string capitalized
 
 **Parameters**
 
--   `string` **[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+-   `string` **[String][29]** 
 
-Returns **[string](#string)** 
+Returns **[string][32]** 
 
 ### capitalize
 
@@ -192,9 +192,9 @@ Returns **[string](#string)**
 
 **Parameters**
 
--   `string` **[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+-   `string` **[String][29]** 
 
-Returns **[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+Returns **[String][29]** 
 
 ### ucwords
 
@@ -202,9 +202,9 @@ Makes every word from string capitalized
 
 **Parameters**
 
--   `string` **[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+-   `string` **[String][29]** 
 
-Returns **[string](#string)** 
+Returns **[string][32]** 
 
 ### excerpt
 
@@ -213,17 +213,17 @@ and add "..." on the end of the string
 
 **Parameters**
 
--   `text` **[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** 
--   `maxLength` **[Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
+-   `text` **[String][29]** 
+-   `maxLength` **[Number][30]** 
 
-Returns **[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+Returns **[String][29]** 
 
 ### uuid
 
 generares a UUID
-Ref: <http://stackoverflow.com/questions/105034/create-guid-uuid-in-javascript>
+Ref: [http://stackoverflow.com/questions/105034/create-guid-uuid-in-javascript][35]
 
-Returns **[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+Returns **[String][29]** 
 
 ## object
 
@@ -237,8 +237,8 @@ Then you get the number 1.
 
 **Parameters**
 
--   `path` **[string](#string)** specify the key of the object you want
--   `obj` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** reference object
+-   `path` **[string][32]** specify the key of the object you want
+-   `obj` **[Object][28]** reference object
 -   `defaultValue` **any** value to return if key was not found. Default is null (optional, default `null`)
 
 Returns **any** 
@@ -251,8 +251,8 @@ Receives a list of paths and use getFlattened to get the first existent value
 
 **Parameters**
 
--   `paths` **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)>** 
--   `obj` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** 
+-   `paths` **[Array][27]&lt;[String][29]>** 
+-   `obj` **[Object][28]** 
 -   `defaultValue` **any**  (optional, default `null`)
 
 Returns **any** 
@@ -268,9 +268,9 @@ Returns **any**
 
 **Parameters**
 
--   `path` **[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+-   `path` **[String][29]** 
 -   `newValue` **any** 
--   `obj` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** 
+-   `obj` **[Object][28]** 
 
 Returns **any** 
 
@@ -280,7 +280,7 @@ Get first key of an object or null if it doesn't have keys
 
 **Parameters**
 
--   `obj` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** 
+-   `obj` **[Object][28]** 
 
 Returns **any** 
 
@@ -290,12 +290,12 @@ Checks if an array of objetcs contain another object (even partially)
 
 **Parameters**
 
--   `collection` **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)>** 
--   `userFilters` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** object to find
--   `detailed` **[Boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** if true will return an object with deails about the searc
--   `ignoreCase` **[Boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** if true, will ignore case when matching strings
+-   `collection` **[Array][27]&lt;[Object][28]>** 
+-   `userFilters` **[Object][28]** object to find
+-   `detailed` **[Boolean][31]** if true will return an object with deails about the searc
+-   `ignoreCase` **[Boolean][31]** if true, will ignore case when matching strings
 
-Returns **([Boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean) \| [Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array))** 
+Returns **([Boolean][31] \| [Array][27])** 
 
 ### flatten
 
@@ -304,11 +304,11 @@ Example: flatten({a: {b: 2}}) will return {"a.b": 2}
 
 **Parameters**
 
--   `obj` **([Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) \| [Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array))** the source object or array
--   `separator` **[string](#string)**  (optional, default `"."`)
--   `prefix` **[string](#string)** All keys will be prefixed with this arg (optional, default `""`)
+-   `obj` **([Object][28] \| [Array][27])** the source object or array
+-   `separator` **[string][32]**  (optional, default `"."`)
+-   `prefix` **[string][32]** All keys will be prefixed with this arg (optional, default `""`)
 
-Returns **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** 
+Returns **[Object][28]** 
 
 ### isCyclic
 
@@ -316,6 +316,76 @@ Check if any given object has some kind of cyclic reference.
 
 **Parameters**
 
--   `obj` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** the source to be checked
+-   `obj` **[Object][28]** the source to be checked
 
-Returns **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** 
+Returns **[boolean][31]** 
+
+[1]: #array
+
+[2]: #sortbyobjectkey
+
+[3]: #filterby
+
+[4]: #date
+
+[5]: #beautifyseconds
+
+[6]: #beautifyminutes
+
+[7]: #frombeutytoseconds
+
+[8]: #daysbetween
+
+[9]: #curdate
+
+[10]: #firstdayofthemonth
+
+[11]: #lastdayofthemonth
+
+[12]: #string
+
+[13]: #resolveurl
+
+[14]: #ucfirst
+
+[15]: #capitalize
+
+[16]: #ucwords
+
+[17]: #excerpt
+
+[18]: #uuid
+
+[19]: #object
+
+[20]: #getflattened
+
+[21]: #getfirstflattened
+
+[22]: #setflattened
+
+[23]: #firstkey
+
+[24]: #collectioncontains
+
+[25]: #flatten
+
+[26]: #iscyclic
+
+[27]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array
+
+[28]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
+
+[29]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
+
+[30]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
+
+[31]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean
+
+[32]: #string
+
+[33]: http://google.com
+
+[34]: https://google.com
+
+[35]: http://stackoverflow.com/questions/105034/create-guid-uuid-in-javascript
