@@ -38,6 +38,32 @@ module.exports = {
     },
 
     /**
+     * Receives a list of paths and use getFlattened to get the first existent value
+     * @param {String[]} paths
+     * @param {Object} obj
+     * @param {any} defaultValue
+     * @return {any}
+     * @see getFlattened
+     */
+    getFirstFlattened: function (paths, obj, defaultValue = null) {
+        if (!Array.isArray(paths)) {
+            throw new Error("paths must be an array of strings");
+        }
+
+        let res = defaultValue;
+        paths.some(path => {
+            const result = this.getFlattened(path, obj, defaultValue);
+            if (result !== defaultValue) {
+                res = result;
+                return true;
+            }
+            return false;
+        });
+
+        return res;
+    },
+
+    /**
      * @see getFlattened
      * Similar to getFlattened, but it set the value instead of return it.
      * Example:

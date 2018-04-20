@@ -36,3 +36,21 @@ test("Test firstKey", () => {
     equals(ObjectHelper.firstKey(testObject), "a");
     equals(ObjectHelper.firstKey(testObject.a.a), "b");
 });
+
+test("Test getFirstFlattened", () => {
+    let response = ObjectHelper.getFirstFlattened(
+        ["a.c.d", "a.a.b", "a.a.c"],
+        testObject,
+        "default"
+    );
+
+    equals(response, 1);
+
+    response = ObjectHelper.getFirstFlattened(
+        ["a.c.d", "b.c.a"],
+        testObject,
+        "default"
+    );
+
+    equals(response, "default");
+});
