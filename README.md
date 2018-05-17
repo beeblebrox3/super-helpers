@@ -9,6 +9,5 @@ A small collection of helper functions for js developers.
 
 Docs: https://beeblebrox3.github.io/super-helpers/
 
-
 ## License
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fbeeblebrox3%2Fsuper-helpers.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fbeeblebrox3%2Fsuper-helpers?ref=badge_large)
