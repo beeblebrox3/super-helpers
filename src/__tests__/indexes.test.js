@@ -7,6 +7,7 @@ test("test if indexes files", () => {
     [
         "array.sortByObjectKey",
         "array.filterBy",
+        "array.indexCollection",
         "date.leadingZero",
         "date.beautifySeconds",
         "date.beautifyMinutes",
