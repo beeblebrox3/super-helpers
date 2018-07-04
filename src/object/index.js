@@ -86,6 +86,10 @@ module.exports = {
         let temp = obj;
 
         for (i = 0; i < laps; i += 1) {
+            if (temp[explodedPath[i]] === undefined) {
+                temp[explodedPath[i]] = {};
+            }
+
             temp = temp[explodedPath[i]];
         }
 

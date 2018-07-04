@@ -1,6 +1,7 @@
 jest.autoMockOff();
 
 const flatten = require("../flatten");
+const { setFlattened } = require('../index');
 
 test("test flatten function", () => {
     const input = {
@@ -55,4 +56,29 @@ test("test flatten function with null and undefined", () => {
     expect(res["c"]).toBe(undefined);
     expect(res["d.e"]).toBe(2);
     expect(res["d.f"]).toBe(undefined);
+});
+
+test("another use case for setFlattened", () => {
+    const source = [
+        "a",
+        "a.a",
+        "a.b",
+        "a.b.c",
+        "a.b.d",
+    ];
+
+    const res = {};
+    source.forEach(piece => {
+        setFlattened(piece, {}, res);
+    });
+
+    expect(res).toMatchObject({
+        a: {
+            a: {},
+            b: {
+                c: {},
+                d: {},
+            },
+        },
+    });
 });
