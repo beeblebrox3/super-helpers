@@ -4,31 +4,54 @@
 
 -   [array][1]
     -   [sortByObjectKey][2]
-    -   [filterBy][3]
-    -   [indexCollection][4]
--   [date][5]
-    -   [beautifySeconds][6]
-    -   [beautifyMinutes][7]
-    -   [fromBeutyToSeconds][8]
-    -   [daysBetween][9]
-    -   [curdate][10]
-    -   [firstDayOfTheMonth][11]
-    -   [lastDayOfTheMonth][12]
--   [string][13]
-    -   [resolveUrl][14]
-    -   [ucfirst][15]
-    -   [capitalize][16]
-    -   [ucwords][17]
-    -   [excerpt][18]
-    -   [uuid][19]
--   [object][20]
-    -   [getFlattened][21]
-    -   [getFirstFlattened][22]
-    -   [setFlattened][23]
-    -   [firstKey][24]
-    -   [collectionContains][25]
-    -   [flatten][26]
-    -   [isCyclic][27]
+        -   [Parameters][3]
+        -   [Examples][4]
+    -   [filterBy][5]
+        -   [Parameters][6]
+        -   [Examples][7]
+    -   [indexCollection][8]
+        -   [Parameters][9]
+        -   [Examples][10]
+-   [date][11]
+    -   [beautifySeconds][12]
+        -   [Parameters][13]
+    -   [beautifyMinutes][14]
+        -   [Parameters][15]
+    -   [fromBeutyToSeconds][16]
+        -   [Parameters][17]
+    -   [daysBetween][18]
+        -   [Parameters][19]
+    -   [curdate][20]
+    -   [firstDayOfTheMonth][21]
+    -   [lastDayOfTheMonth][22]
+        -   [Parameters][23]
+-   [string][24]
+    -   [resolveUrl][25]
+        -   [Parameters][26]
+    -   [ucfirst][27]
+        -   [Parameters][28]
+    -   [capitalize][29]
+        -   [Parameters][30]
+    -   [ucwords][31]
+        -   [Parameters][32]
+    -   [excerpt][33]
+        -   [Parameters][34]
+    -   [uuid][35]
+-   [object][36]
+    -   [getFlattened][37]
+        -   [Parameters][38]
+    -   [getFirstFlattened][39]
+        -   [Parameters][40]
+    -   [setFlattened][41]
+        -   [Parameters][42]
+    -   [firstKey][43]
+        -   [Parameters][44]
+    -   [collectionContains][45]
+        -   [Parameters][46]
+    -   [flatten][47]
+        -   [Parameters][48]
+    -   [isCyclic][49]
+        -   [Parameters][50]
 
 ## array
 
@@ -36,13 +59,13 @@
 
 Sort a collection of objects by one of the keys
 
-**Parameters**
+#### Parameters
 
--   `data` **[Array][28]&lt;[Object][29]>** 
--   `prop` **[String][30]** 
--   `direction` **[String][30]** defines if sort should be asc or desc
+-   `data` **[Array][51]&lt;[Object][52]>** 
+-   `prop` **[String][53]** 
+-   `direction` **[String][53]** defines if sort should be asc or desc
 
-**Examples**
+#### Examples
 
 ```javascript
 const data = [{id: 1, name: "foo"}, {id: 2, name: "abc"}]
@@ -50,19 +73,19 @@ sortByObjectKey(data, "name")
 // output will be [{id: 2, name: "abc"}, {id: 1, name: "foo"}]
 ```
 
-Returns **[Array][28]&lt;[Object][29]>** sorted arrray
+Returns **[Array][51]&lt;[Object][52]>** sorted arrray
 
 ### filterBy
 
 Filter a collection of objects by one prop
 
-**Parameters**
+#### Parameters
 
--   `key` **[String][30]** 
+-   `key` **[String][53]** 
 -   `values` **any** 
--   `items` **[Array][28]&lt;[Object][29]>** 
+-   `items` **[Array][51]&lt;[Object][52]>** 
 
-**Examples**
+#### Examples
 
 ```javascript
 const arr = [{a: 1}, {a: 2}, {a: 3}]
@@ -72,19 +95,19 @@ filterBy("a", [1, 3], arr);
 // [{a: 1}, {a: 3}]
 ```
 
-Returns **[Array][28]&lt;[Object][29]>** 
+Returns **[Array][51]&lt;[Object][52]>** 
 
 ### indexCollection
 
 Takes an array of objects and transforms it into an object where the keys
 are some value of each array
 
-**Parameters**
+#### Parameters
 
--   `data` **[Array][28]&lt;[Object][29]>** 
--   `prop` **[String][30]** 
+-   `data` **[Array][51]&lt;[Object][52]>** 
+-   `prop` **[String][53]** 
 
-**Examples**
+#### Examples
 
 ```javascript
 const data = [{id: 1, name: "foo"}, {id: 2, name: "abc"}]
@@ -92,7 +115,7 @@ indexCollection(data, "id")
 // output will be {1: {id: 1, name: "foo"}, {id: 2, name: "abc"}}
 ```
 
-Returns **[Object][29]** 
+Returns **[Object][52]** 
 
 ## date
 
@@ -106,71 +129,71 @@ beautifyMinutes(120, false) => 02m
 beautifyMinutes(3900, false) => 1h05m
 beautifyMinutes(3900, true) => 1h05m00s
 
-**Parameters**
+#### Parameters
 
--   `seconds` **[Number][31]** 
--   `showSeconds` **[Boolean][32]**  (optional, default `true`)
+-   `seconds` **[Number][54]** 
+-   `showSeconds` **[Boolean][55]**  (optional, default `true`)
 
-Returns **[string][33]** 
+Returns **[string][56]** 
 
 ### beautifyMinutes
 
 -   **See: beautifySeconds
     Works the same way as beautifySeconds, but receive an amount of minutes**
 
-**Parameters**
+#### Parameters
 
--   `minutes` **[Number][31]** 
--   `showSeconds` **[Boolean][32]**  (optional, default `true`)
+-   `minutes` **[Number][54]** 
+-   `showSeconds` **[Boolean][55]**  (optional, default `true`)
 
-Returns **[String][30]** 
+Returns **[String][53]** 
 
 ### fromBeutyToSeconds
 
 Receives an duration with the format 00h00m00s and returns the amount
 of seconds. The inverse of beautifySeconds
 
-**Parameters**
+#### Parameters
 
--   `theTime` **[String][30]** 
+-   `theTime` **[String][53]** 
 
-Returns **[Number][31]** 
+Returns **[Number][54]** 
 
 ### daysBetween
 
 Receive two dates and returns the amount of days between them
 Dates on the format supported by the Date constructor
 
-**Parameters**
+#### Parameters
 
--   `startDateString` **[String][30]** 
--   `endDateString` **[String][30]** 
+-   `startDateString` **[String][53]** 
+-   `endDateString` **[String][53]** 
 
-Returns **[Number][31]** 
+Returns **[Number][54]** 
 
 ### curdate
 
 Returns the current date on the format: yyyy-mm-dd
 
-Returns **[String][30]** 
+Returns **[String][53]** 
 
 ### firstDayOfTheMonth
 
 Returns the first day of the current month on the format: yyyy-dd-mm
 
-Returns **[String][30]** 
+Returns **[String][53]** 
 
 ### lastDayOfTheMonth
 
 Returns the last day of the month on the format: yyyy-mm-dd
 It accepts an optional month and year to get the last day of an particular month
 
-**Parameters**
+#### Parameters
 
--   `month` **[String][30]** 
--   `year` **[String][30]** 
+-   `month` **[String][53]** 
+-   `year` **[String][53]** 
 
-Returns **[String][30]** 
+Returns **[String][53]** 
 
 ## string
 
@@ -180,8 +203,8 @@ Add basepath if isn't complete
 Consider a complete url when it contains '//'
 
 Examples of complete urls:
-[http://google.com][34]
-[https://google.com][35]
+[http://google.com][57]
+[https://google.com][58]
 //google.com
 
 Examples of incomplete urls:
@@ -190,61 +213,61 @@ google
 users/create
 /users/create
 
-**Parameters**
+#### Parameters
 
--   `url` **[String][30]** 
--   `basePath` **[String][30]** basepath to be used, with protocol (optional, default `""`)
+-   `url` **[String][53]** 
+-   `basePath` **[String][53]** basepath to be used, with protocol (optional, default `""`)
 
-Returns **[String][30]** 
+Returns **[String][53]** 
 
 ### ucfirst
 
 Makes string capitalized
 
-**Parameters**
+#### Parameters
 
--   `string` **[String][30]** 
+-   `string` **[String][53]** 
 
-Returns **[string][33]** 
+Returns **[string][56]** 
 
 ### capitalize
 
 -   **See: App.helpers.string.ucfirst**
 
-**Parameters**
+#### Parameters
 
--   `string` **[String][30]** 
+-   `string` **[String][53]** 
 
-Returns **[String][30]** 
+Returns **[String][53]** 
 
 ### ucwords
 
 Makes every word from string capitalized
 
-**Parameters**
+#### Parameters
 
--   `string` **[String][30]** 
+-   `string` **[String][53]** 
 
-Returns **[string][33]** 
+Returns **[string][56]** 
 
 ### excerpt
 
 Will crop the text to fit the maxLength provided. Will try to not break any words
 and add "..." on the end of the string
 
-**Parameters**
+#### Parameters
 
--   `text` **[String][30]** 
--   `maxLength` **[Number][31]** 
+-   `text` **[String][53]** 
+-   `maxLength` **[Number][54]** 
 
-Returns **[String][30]** 
+Returns **[String][53]** 
 
 ### uuid
 
 generares a UUID
-Ref: [http://stackoverflow.com/questions/105034/create-guid-uuid-in-javascript][36]
+Ref: [http://stackoverflow.com/questions/105034/create-guid-uuid-in-javascript][59]
 
-Returns **[String][30]** 
+Returns **[String][53]** 
 
 ## object
 
@@ -256,10 +279,10 @@ Given the object let a = {a: {b: 1}}
 When you do getFlattened("a.b", a)
 Then you get the number 1.
 
-**Parameters**
+#### Parameters
 
--   `path` **[string][33]** specify the key of the object you want
--   `obj` **[Object][29]** reference object
+-   `path` **[string][56]** specify the key of the object you want
+-   `obj` **[Object][52]** reference object
 -   `defaultValue` **any** value to return if key was not found. Default is null (optional, default `null`)
 
 Returns **any** 
@@ -270,10 +293,10 @@ Returns **any**
 
 Receives a list of paths and use getFlattened to get the first existent value
 
-**Parameters**
+#### Parameters
 
--   `paths` **[Array][28]&lt;[String][30]>** 
--   `obj` **[Object][29]** 
+-   `paths` **[Array][51]&lt;[String][53]>** 
+-   `obj` **[Object][52]** 
 -   `defaultValue` **any**  (optional, default `null`)
 
 Returns **any** 
@@ -287,11 +310,11 @@ Returns **any**
     When you do setFlattened("a.b", 2)
     Then you get {a: {b: 2}}**
 
-**Parameters**
+#### Parameters
 
--   `path` **[String][30]** 
+-   `path` **[String][53]** 
 -   `newValue` **any** 
--   `obj` **[Object][29]** 
+-   `obj` **[Object][52]** 
 
 Returns **any** 
 
@@ -299,9 +322,9 @@ Returns **any**
 
 Get first key of an object or null if it doesn't have keys
 
-**Parameters**
+#### Parameters
 
--   `obj` **[Object][29]** 
+-   `obj` **[Object][52]** 
 
 Returns **any** 
 
@@ -309,106 +332,152 @@ Returns **any**
 
 Checks if an array of objetcs contain another object (even partially)
 
-**Parameters**
+#### Parameters
 
--   `collection` **[Array][28]&lt;[Object][29]>** 
--   `userFilters` **[Object][29]** object to find
--   `detailed` **[Boolean][32]** if true will return an object with deails about the searc
--   `ignoreCase` **[Boolean][32]** if true, will ignore case when matching strings
+-   `collection` **[Array][51]&lt;[Object][52]>** 
+-   `userFilters` **[Object][52]** object to find
+-   `detailed` **[Boolean][55]** if true will return an object with deails about the searc
+-   `ignoreCase` **[Boolean][55]** if true, will ignore case when matching strings
 
-Returns **([Boolean][32] \| [Array][28])** 
+Returns **([Boolean][55] \| [Array][51])** 
 
 ### flatten
 
 Transforms an nested object into an flat object with dotted notation
 Example: flatten({a: {b: 2}}) will return {"a.b": 2}
 
-**Parameters**
+#### Parameters
 
--   `obj` **([Object][29] \| [Array][28])** the source object or array
--   `separator` **[string][33]**  (optional, default `"."`)
--   `prefix` **[string][33]** All keys will be prefixed with this arg (optional, default `""`)
+-   `obj` **([Object][52] \| [Array][51])** the source object or array
+-   `separator` **[string][56]**  (optional, default `"."`)
+-   `prefix` **[string][56]** All keys will be prefixed with this arg (optional, default `""`)
 
-Returns **[Object][29]** 
+Returns **[Object][52]** 
 
 ### isCyclic
 
 Check if any given object has some kind of cyclic reference.
 
-**Parameters**
+#### Parameters
 
--   `obj` **[Object][29]** the source to be checked
+-   `obj` **[Object][52]** the source to be checked
 
-Returns **[boolean][32]** 
+Returns **[boolean][55]** 
 
 [1]: #array
 
 [2]: #sortbyobjectkey
 
-[3]: #filterby
+[3]: #parameters
 
-[4]: #indexcollection
+[4]: #examples
 
-[5]: #date
+[5]: #filterby
 
-[6]: #beautifyseconds
+[6]: #parameters-1
 
-[7]: #beautifyminutes
+[7]: #examples-1
 
-[8]: #frombeutytoseconds
+[8]: #indexcollection
 
-[9]: #daysbetween
+[9]: #parameters-2
 
-[10]: #curdate
+[10]: #examples-2
 
-[11]: #firstdayofthemonth
+[11]: #date
 
-[12]: #lastdayofthemonth
+[12]: #beautifyseconds
 
-[13]: #string
+[13]: #parameters-3
 
-[14]: #resolveurl
+[14]: #beautifyminutes
 
-[15]: #ucfirst
+[15]: #parameters-4
 
-[16]: #capitalize
+[16]: #frombeutytoseconds
 
-[17]: #ucwords
+[17]: #parameters-5
 
-[18]: #excerpt
+[18]: #daysbetween
 
-[19]: #uuid
+[19]: #parameters-6
 
-[20]: #object
+[20]: #curdate
 
-[21]: #getflattened
+[21]: #firstdayofthemonth
 
-[22]: #getfirstflattened
+[22]: #lastdayofthemonth
 
-[23]: #setflattened
+[23]: #parameters-7
 
-[24]: #firstkey
+[24]: #string
 
-[25]: #collectioncontains
+[25]: #resolveurl
 
-[26]: #flatten
+[26]: #parameters-8
 
-[27]: #iscyclic
+[27]: #ucfirst
 
-[28]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array
+[28]: #parameters-9
 
-[29]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
+[29]: #capitalize
 
-[30]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
+[30]: #parameters-10
 
-[31]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
+[31]: #ucwords
 
-[32]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean
+[32]: #parameters-11
 
-[33]: #string
+[33]: #excerpt
 
-[34]: http://google.com
+[34]: #parameters-12
 
-[35]: https://google.com
+[35]: #uuid
 
-[36]: http://stackoverflow.com/questions/105034/create-guid-uuid-in-javascript
+[36]: #object
+
+[37]: #getflattened
+
+[38]: #parameters-13
+
+[39]: #getfirstflattened
+
+[40]: #parameters-14
+
+[41]: #setflattened
+
+[42]: #parameters-15
+
+[43]: #firstkey
+
+[44]: #parameters-16
+
+[45]: #collectioncontains
+
+[46]: #parameters-17
+
+[47]: #flatten
+
+[48]: #parameters-18
+
+[49]: #iscyclic
+
+[50]: #parameters-19
+
+[51]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array
+
+[52]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
+
+[53]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
+
+[54]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
+
+[55]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean
+
+[56]: #string
+
+[57]: http://google.com
+
+[58]: https://google.com
+
+[59]: http://stackoverflow.com/questions/105034/create-guid-uuid-in-javascript
