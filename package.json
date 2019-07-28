@@ -1,30 +1,31 @@
 {
-    "name": "super-helpers",
-    "description": "JavaScript helpers",
-    "version": "1.0.1",
-    "homepage": "https://github.com/beeblebrox3/super-helpers",
-    "issues": "https://github.com/beeblebrox3/super-helpers/issues",
-    "license": "MIT",
-    "author": "Luís Henrique Faria <luish.faria@gmail.com> (https://github.com/beeblebrox3)",
-    "main": "src/index.js",
-    "directories": {
-        "doc": "./docs"
-    },
-    "scripts": {
-        "test": "jest",
-        "test-watch": "jest --watch",
-        "docs-md": "./node_modules/.bin/documentation build src/index.js -f md -o docs/docs.md",
-        "docs-html": "./node_modules/.bin/documentation build src/index.js -f html -o docs",
-        "docs": "npm run docs-html && npm run docs-md",
-        "prepublishOnly": "npm run docs"
-    },
-    "devDependencies": {
-        "documentation": "^12.0.3",
-        "eslint": "^6.1.0",
-        "eslint-config-google": "^0.13.0",
-        "istanbul-api": "^2.1.6",
-        "istanbul-reports": "^2.2.6",
-        "jest": "^24.8.0",
-        "mockdate": "^2.0.3"
-    }
+  "name": "super-helpers",
+  "description": "JavaScript helpers",
+  "version": "1.0.1",
+  "homepage": "https://github.com/beeblebrox3/super-helpers",
+  "issues": "https://github.com/beeblebrox3/super-helpers/issues",
+  "license": "MIT",
+  "author": "Luís Henrique Faria <luish.faria@gmail.com> (https://github.com/beeblebrox3)",
+  "main": "src/index.js",
+  "directories": {
+    "doc": "./docs"
+  },
+  "scripts": {
+    "test": "jest",
+    "test-watch": "jest --watch",
+    "docs-md": "./node_modules/.bin/documentation build src/index.js -f md -o docs/docs.md",
+    "docs-html": "./node_modules/.bin/documentation build src/index.js -f html -o docs",
+    "docs": "npm run docs-html && npm run docs-md",
+    "prepublishOnly": "npm run docs"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.15",
+    "documentation": "^12.0.3",
+    "eslint": "^6.1.0",
+    "eslint-config-google": "^0.13.0",
+    "istanbul-api": "^2.1.6",
+    "istanbul-reports": "^2.2.6",
+    "jest": "^24.8.0",
+    "mockdate": "^2.0.3"
+  }
 }

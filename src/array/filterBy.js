@@ -15,6 +15,6 @@
  * // The output will be:
  * // [{a: 1}, {a: 3}]
  */
-module.exports = function filterBy (key, values, items) {
-    return items.filter(item => values.indexOf(item[key]) > -1);
+module.exports = function filterBy(key, values, items) {
+  return items.filter(item => values.indexOf(item[key]) > -1);
 };
