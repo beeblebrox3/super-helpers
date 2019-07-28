@@ -19,12 +19,12 @@
         "prepublishOnly": "npm run docs"
     },
     "devDependencies": {
-        "documentation": "^9.0.0",
-        "eslint": "^5.10.0",
-        "eslint-config-google": "^0.11.0",
-        "istanbul-api": "^2.0.6",
-        "istanbul-reports": "^2.0.1",
-        "jest": "^23.6.0",
-        "mockdate": "^2.0.2"
+        "documentation": "^12.0.3",
+        "eslint": "^6.1.0",
+        "eslint-config-google": "^0.13.0",
+        "istanbul-api": "^2.1.6",
+        "istanbul-reports": "^2.2.6",
+        "jest": "^24.8.0",
+        "mockdate": "^2.0.3"
     }
 }
