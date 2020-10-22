@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset='utf-8'>
-  <title>super-helpers 1.0.1 | Documentation</title>
+  <title>super-helpers 1.1.0 | Documentation</title>
   <meta name='description' content='JavaScript helpers'>
   <meta name='viewport' content='width=device-width,initial-scale=1'>
   <link href='assets/bass.css' rel='stylesheet'>
@@ -15,7 +15,7 @@
       <div id='split-left' class='overflow-auto fs0 height-viewport-100'>
         <div class='py1 px2'>
           <h3 class='mb0 no-anchor'>super-helpers</h3>
-          <div class='mb1'><code>1.0.1</code></div>
+          <div class='mb1'><code>1.1.0</code></div>
           <input
             placeholder='Filter'
             id='filter-input'
@@ -1088,7 +1088,7 @@ Dates on the format supported by the Date constructor</p>
   <p>Returns the last day of the month on the format: yyyy-mm-dd
 It accepts an optional month and year to get the last day of an particular month</p>
 
-    <div class='pre p1 fill-light mt0'>lastDayOfTheMonth(month: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>, year: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></div>
+    <div class='pre p1 fill-light mt0'>lastDayOfTheMonth(month: (<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>), year: (<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></div>
   
   
 
@@ -1105,7 +1105,7 @@ It accepts an optional month and year to get the last day of an particular month
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>month</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>)</code>
+            <span class='code bold'>month</span> <code class='quiet'>((<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>))</code>
 	    
           </div>
           
@@ -1113,7 +1113,7 @@ It accepts an optional month and year to get the last day of an particular month
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>year</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>)</code>
+            <span class='code bold'>year</span> <code class='quiet'>((<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>))</code>
 	    
           </div>
           
@@ -1612,7 +1612,8 @@ Ref: <a href="http://stackoverflow.com/questions/105034/create-guid-uuid-in-java
   
   
 
-  
+  <div>Deprecated: this function will be removed on next major verson
+</div>
   
   
   
@@ -1804,7 +1805,7 @@ Then you get the number 1.</p>
       <div class="clearfix small pointer toggle-sibling">
         <div class="py1 contain">
             <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>getFirstFlattened(paths, obj, defaultValue)</span>
+            <span class='code strong strong truncate'>getFirstFlattened(paths, obj, defaultValue = null)</span>
         </div>
       </div>
       <div class="clearfix display-none toggle-target">
@@ -1814,7 +1815,7 @@ Then you get the number 1.</p>
 
   <p>Receives a list of paths and use getFlattened to get the first existent value</p>
 
-    <div class='pre p1 fill-light mt0'>getFirstFlattened(paths: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>>, obj: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>, defaultValue: any): any</div>
+    <div class='pre p1 fill-light mt0'>getFirstFlattened(paths: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>>, obj: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>, defaultValue: any?): any</div>
   
   
 
@@ -1847,7 +1848,7 @@ Then you get the number 1.</p>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>defaultValue</span> <code class='quiet'>(any
+            <span class='code bold'>defaultValue</span> <code class='quiet'>(any?
             = <code>null</code>)</code>
 	    
           </div>
@@ -2067,7 +2068,7 @@ Then you get {a: {b: 2}}
       <div class="clearfix small pointer toggle-sibling">
         <div class="py1 contain">
             <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>collectionContains(collection, userFilters, detailed, ignoreCase)</span>
+            <span class='code strong strong truncate'>collectionContains(collection, userFilters, detailed = false, ignoreCase = false)</span>
         </div>
       </div>
       <div class="clearfix display-none toggle-target">
@@ -2077,7 +2078,7 @@ Then you get {a: {b: 2}}
 
   <p>Checks if an array of objetcs contain another object (even partially)</p>
 
-    <div class='pre p1 fill-light mt0'>collectionContains(collection: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>>, userFilters: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>, detailed: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a>, ignoreCase: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a>): (<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a> | {found: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>, details: <a href="#object">object</a>})</div>
+    <div class='pre p1 fill-light mt0'>collectionContains(collection: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>>, userFilters: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>, detailed: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a>?, ignoreCase: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a>?): (<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
 
@@ -2111,7 +2112,8 @@ Then you get {a: {b: 2}}
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>detailed</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a>)</code>
+            <span class='code bold'>detailed</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a>?
+            = <code>false</code>)</code>
 	    if true will return an object with deails about the searc
 
           </div>
@@ -2120,7 +2122,8 @@ Then you get {a: {b: 2}}
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>ignoreCase</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a>)</code>
+            <span class='code bold'>ignoreCase</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a>?
+            = <code>false</code>)</code>
 	    if true, will ignore case when matching strings
 
           </div>
@@ -2135,7 +2138,7 @@ Then you get {a: {b: 2}}
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a> | {found: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>, details: <a href="#object">object</a>})</code>:
+      <code>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>:
         
 
       

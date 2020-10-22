@@ -1,7 +1,7 @@
 jest.autoMockOff();
 
 const flatten = require("../flatten");
-const {setFlattened} = require("../index");
+const { setFlattened } = require("../index");
 
 test("test flatten function", () => {
   const input = {
@@ -14,7 +14,7 @@ test("test flatten function", () => {
       },
       ee: "a",
       c: {
-        a: {a: {b: 1}},
+        a: { a: { b: 1 } },
       },
     },
   };

@@ -38,19 +38,9 @@ test("Test firstKey", () => {
 });
 
 test("Test getFirstFlattened", () => {
-  let response = ObjectHelper.getFirstFlattened(
-      ["a.c.d", "a.a.b", "a.a.c"],
-      testObject,
-      "default"
-  );
-
+  let response = ObjectHelper.getFirstFlattened(["a.c.d", "a.a.b", "a.a.c"], testObject, "default");
   equals(response, 1);
 
-  response = ObjectHelper.getFirstFlattened(
-      ["a.c.d", "b.c.a"],
-      testObject,
-      "default"
-  );
-
+  response = ObjectHelper.getFirstFlattened(["a.c.d", "b.c.a"], testObject, "default");
   equals(response, "default");
 });

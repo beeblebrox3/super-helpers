@@ -1,15 +1,30 @@
 {
-    "extends": ["eslint:recommended", "google"],
-    "env": {
-        "node": true,
-        "browser": true,
-        "es6": true,
-        "jest": true
-    },
-    "rules": {
-        "quotes": ["warn", "double"],
-        "space-before-function-paren": ["warn", "always"],
-        "arrow-parens": "off",
-        "max-len": ["error", 120]
-    }
+  "extends": [
+    "eslint:recommended",
+    "google"
+  ],
+  "env": {
+    "node": true,
+    "browser": true,
+    "es6": true,
+    "jest": true
+  },
+  "rules": {
+    "quotes": [
+      "warn",
+      "double"
+    ],
+    "space-before-function-paren": [
+      "warn",
+      "always"
+    ],
+    "object-curly-spacing": [
+      "warn",
+      "always"
+    ],
+    "arrow-parens": "off",
+    "object-property-newline": "off",
+    "array-element-newline": "off",
+    "max-len": ["error", 120],
+  }
 }

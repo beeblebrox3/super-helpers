@@ -3,7 +3,6 @@ jest.autoMockOff();
 const StringHelper = require("../index");
 
 const equals = (actual, expected) => expect(actual).toBe(expected);
-
 test("Test resolveUrl", () => {
   const basepath = "http://x.com/";
 

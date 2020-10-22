@@ -191,8 +191,8 @@ It accepts an optional month and year to get the last day of an particular month
 
 #### Parameters
 
--   `month` **[String][53]** 
--   `year` **[String][53]** 
+-   `month` **([String][53] \| [number][54])** 
+-   `year` **([String][53] \| [number][54])** 
 
 Returns **[String][53]** 
 
@@ -271,6 +271,11 @@ Ref: [http://stackoverflow.com/questions/105034/create-guid-uuid-in-javascript][
 
 Returns **[String][53]** 
 
+**Meta**
+
+-   **deprecated**: this function will be removed on next major verson
+
+
 ## object
 
 ### getFlattened
@@ -300,7 +305,7 @@ Receives a list of paths and use getFlattened to get the first existent value
 
 -   `paths` **[Array][51]&lt;[String][53]>** 
 -   `obj` **[Object][52]** 
--   `defaultValue` **any**  (optional, default `null`)
+-   `defaultValue` **any?**  (optional, default `null`)
 
 Returns **any** 
 
@@ -340,10 +345,10 @@ Checks if an array of objetcs contain another object (even partially)
 
 -   `collection` **[Array][51]&lt;[Object][52]>** 
 -   `userFilters` **[Object][52]** object to find
--   `detailed` **[Boolean][55]** if true will return an object with deails about the searc
--   `ignoreCase` **[Boolean][55]** if true, will ignore case when matching strings
+-   `detailed` **[Boolean][55]?** if true will return an object with deails about the searc (optional, default `false`)
+-   `ignoreCase` **[Boolean][55]?** if true, will ignore case when matching strings (optional, default `false`)
 
-Returns **([Boolean][55] | {found: [boolean][55], details: [object][60]})** 
+Returns **([Boolean][55] \| [Object][52])** 
 
 ### flatten
 
@@ -485,5 +490,3 @@ Returns **[boolean][55]**
 [58]: https://google.com
 
 [59]: http://stackoverflow.com/questions/105034/create-guid-uuid-in-javascript
-
-[60]: #object

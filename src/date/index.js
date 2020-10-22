@@ -1,28 +1,28 @@
 /** @namespace date */
 module.exports = {
   /**
-     * @param {String|Number} num add a leading 0 to help format dates and times
-     * @return {String}
-     * @memberof date
-     * @private
-     */
+   * @param {String|Number} num add a leading 0 to help format dates and times
+   * @return {String}
+   * @memberof date
+   * @private
+   */
   leadingZero: function (num) {
     return `0${num}`.slice(-2);
   },
 
   /**
-     * Receive a number of seconds and return an string representing the amount of
-     * hours on the format: 00h00m00s
-     * Examples:
-     * beautifySeconds(60, false) => 01m
-     * beautifyMinutes(120, false) => 02m
-     * beautifyMinutes(3900, false) => 1h05m
-     * beautifyMinutes(3900, true) => 1h05m00s
-     * @param {Number} seconds
-     * @param {Boolean} showSeconds
-     * @return {string}
-     * @memberof date
-     */
+   * Receive a number of seconds and return an string representing the amount of
+   * hours on the format: 00h00m00s
+   * Examples:
+   * beautifySeconds(60, false) => 01m
+   * beautifyMinutes(120, false) => 02m
+   * beautifyMinutes(3900, false) => 1h05m
+   * beautifyMinutes(3900, true) => 1h05m00s
+   * @param {Number} seconds
+   * @param {Boolean} showSeconds
+   * @return {string}
+   * @memberof date
+   */
   beautifySeconds: function (seconds, showSeconds = true) {
     let response = "";
     const theTime = {
@@ -50,26 +50,26 @@ module.exports = {
   },
 
   /**
-     * @see beautifySeconds
-     * Works the same way as beautifySeconds, but receive an amount of minutes
-     * @param {Number} minutes
-     * @param {Boolean} showSeconds
-     * @return {String}
-     * @memberof date
-     */
+   * @see beautifySeconds
+   * Works the same way as beautifySeconds, but receive an amount of minutes
+   * @param {Number} minutes
+   * @param {Boolean} showSeconds
+   * @return {String}
+   * @memberof date
+   */
   beautifyMinutes: function (minutes, showSeconds = true) {
     return this.beautifySeconds(minutes * 60, showSeconds);
   },
 
 
   /**
-     * Receives an duration with the format 00h00m00s and returns the amount
-     * of seconds. The inverse of beautifySeconds
-     *
-     * @param {String} theTime
-     * @return {Number}
-     * @memberof date
-     */
+   * Receives an duration with the format 00h00m00s and returns the amount
+   * of seconds. The inverse of beautifySeconds
+   *
+   * @param {String} theTime
+   * @return {Number}
+   * @memberof date
+   */
   fromBeutyToSeconds: function (theTime) {
     let response = 0;
 
@@ -102,54 +102,52 @@ module.exports = {
 
 
   /**
-     * Receive two dates and returns the amount of days between them
-     * Dates on the format supported by the Date constructor
-     *
-     * @param {String} startDateString
-     * @param {String} endDateString
-     * @return {Number}
-     * @memberof date
-     */
+   * Receive two dates and returns the amount of days between them
+   * Dates on the format supported by the Date constructor
+   *
+   * @param {String} startDateString
+   * @param {String} endDateString
+   * @return {Number}
+   * @memberof date
+   */
   daysBetween: function (startDateString, endDateString) {
     const oneDay = 24 * 60 * 60 * 1000;
     const startDate = new Date(startDateString);
     const endDate = new Date(endDateString);
 
-    return Math.round(
-        Math.abs((startDate.getTime() - endDate.getTime()) / oneDay)
-    );
+    return Math.round(Math.abs((startDate.getTime() - endDate.getTime()) / oneDay));
   },
 
   /**
-     * Returns the current date on the format: yyyy-mm-dd
-     * @return {String}
-     * @memberof date
-     */
+   * Returns the current date on the format: yyyy-mm-dd
+   * @return {String}
+   * @memberof date
+   */
   curdate: () => new Date().toISOString().substr(0, 10),
 
   /**
-     * Returns the first day of the current month on the format: yyyy-dd-mm
-     * @return {String}
-     * @memberof date
-     */
+   * Returns the first day of the current month on the format: yyyy-dd-mm
+   * @return {String}
+   * @memberof date
+   */
   firstDayOfTheMonth: function () {
     const today = new Date();
     return `${today.getFullYear()}-${today.getMonth() + 1}-01`;
   },
 
   /**
-     * Returns the last day of the month on the format: yyyy-mm-dd
-     * It accepts an optional month and year to get the last day of an particular month
-     * @param {String} month
-     * @param {String} year
-     * @return {String}
-     * @memberof date
-     */
+   * Returns the last day of the month on the format: yyyy-mm-dd
+   * It accepts an optional month and year to get the last day of an particular month
+   * @param {String|number} month
+   * @param {String|number} year
+   * @return {String}
+   * @memberof date
+   */
   lastDayOfTheMonth: function (month, year) {
     const today = new Date();
     const useMonth = month ? month : today.getMonth() + 1;
     const useYear = year ? year : today.getFullYear();
-    const lastDay = new Date(useYear, useMonth, 0);
+    const lastDay = new Date(+useYear, +useMonth, 0);
 
     return `${useYear}-${this.leadingZero(useMonth)}-${this.leadingZero(lastDay.getDate())}`;
   },

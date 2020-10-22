@@ -23,7 +23,7 @@ test("Test beautifySeconds", () => {
     3900: ["1h05m", "1h05m00s"],
   };
 
-  Object.keys(hash).forEach(function (seconds) {
+  Object.keys(hash).map(function (seconds) {
     equals(hash[seconds][0], DateHelper.beautifySeconds(parseInt(seconds, 10), false));
     equals(hash[seconds][1], DateHelper.beautifySeconds(parseInt(seconds, 10), true));
   });
@@ -38,7 +38,7 @@ test("Test beautifyMinutes", () => {
     3905: ["65h05m", "65h05m00s"],
   };
 
-  Object.keys(hash).forEach(function (minutes) {
+  Object.keys(hash).map(function (minutes) {
     equals(hash[minutes][0], DateHelper.beautifyMinutes(parseInt(minutes, 10), false));
     equals(hash[minutes][1], DateHelper.beautifyMinutes(parseInt(minutes, 10), true));
   });
@@ -58,7 +58,7 @@ test("Test fromBeutyToSeconds", () => {
     "1h0m1s": 3601,
   };
 
-  Object.keys(hash).forEach(function (strTime) {
+  Object.keys(hash).map(function (strTime) {
     equals(hash[strTime], DateHelper.fromBeutyToSeconds(strTime));
   });
 });
@@ -81,7 +81,7 @@ test("Test daysBetween", () => {
     expected: 365,
   }];
 
-  testData.forEach(function (data) {
+  testData.map(function (data) {
     equals(DateHelper.daysBetween(data.dates[0], data.dates[1]), data.expected);
   });
 });

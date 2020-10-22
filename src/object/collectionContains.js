@@ -4,12 +4,12 @@
  *
  * @param {Object[]} collection
  * @param {Object} userFilters object to find
- * @param {Boolean} detailed if true will return an object with deails about the searc
- * @param {Boolean} ignoreCase if true, will ignore case when matching strings
- * @return {Boolean|{found: boolean, details: object}}
+ * @param {Boolean} [detailed] if true will return an object with deails about the searc
+ * @param {Boolean} [ignoreCase] if true, will ignore case when matching strings
+ * @return {Boolean|Object}
  * @memberof object
  */
-function collectionContains (collection, userFilters, detailed, ignoreCase) {
+function collectionContains (collection, userFilters, detailed = false, ignoreCase = false) {
   const filters = Object.assign({}, userFilters);
   const details = [];
   const found = collection.some((obj) => {
@@ -63,7 +63,7 @@ function collectionContains (collection, userFilters, detailed, ignoreCase) {
 
 collectionContains.Types = {
   NotEmpty: function (v) {
-    return !! v;
+    return !!v;
   },
 };
 
