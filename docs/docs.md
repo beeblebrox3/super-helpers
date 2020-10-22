@@ -139,7 +139,8 @@ Returns **[string][56]**
 ### beautifyMinutes
 
 -   **See: beautifySeconds
-    Works the same way as beautifySeconds, but receive an amount of minutes**
+    Works the same way as beautifySeconds, but receive an amount of minutes
+    **
 
 #### Parameters
 
@@ -232,7 +233,8 @@ Returns **[string][56]**
 
 ### capitalize
 
--   **See: App.helpers.string.ucfirst**
+-   **See: App.helpers.string.ucfirst
+    **
 
 #### Parameters
 
@@ -294,7 +296,8 @@ Returns **any**
 
 ### getFirstFlattened
 
--   **See: getFlattened**
+-   **See: getFlattened
+    **
 
 Receives a list of paths and use getFlattened to get the first existent value
 
@@ -313,7 +316,8 @@ Returns **any**
     Example:
     Given the object let b = {a: {b: 1}}
     When you do setFlattened("a.b", 2)
-    Then you get {a: {b: 2}}**
+    Then you get {a: {b: 2}}
+    **
 
 #### Parameters
 

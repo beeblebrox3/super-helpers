@@ -13,7 +13,7 @@
  * sortByObjectKey(data, "name")
  * // output will be [{id: 2, name: "abc"}, {id: 1, name: "foo"}]
  */
-module.exports = function sortByObjectKey(data, prop, direction = "asc") {
+module.exports = function sortByObjectKey (data, prop, direction = "asc") {
   if (["asc", "desc"].indexOf(direction) === -1) {
     throw new Error("Direction should be asc or desc");
   }

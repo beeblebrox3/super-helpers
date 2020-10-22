@@ -13,7 +13,7 @@
  * indexCollection(data, "id")
  * // output will be {1: {id: 1, name: "foo"}, {id: 2, name: "abc"}}
  */
-module.exports = function indexCollection(data, prop) {
+module.exports = function indexCollection (data, prop) {
   if (!Array.isArray(data)) throw new Error("data should be an array");
   if (typeof prop !== "string") throw new Error("prop should be a string");
 

@@ -11,8 +11,7 @@ const CIRCULAR_REF_ERROR_MSG = "Object cannot be flattened due to circular refer
  * @return {Object}
  * @memberof object
  */
-function flatten(obj, separator = ".", prefix = "") {
-
+function flatten (obj, separator = ".", prefix = "") {
   if (isCyclic(obj)) {
     throw new Error(CIRCULAR_REF_ERROR_MSG);
   }

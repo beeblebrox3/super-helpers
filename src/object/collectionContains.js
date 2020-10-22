@@ -9,7 +9,7 @@
  * @return {Boolean|Object}
  * @memberof object
  */
-function collectionContains(collection, userFilters, detailed = false, ignoreCase = false) {
+function collectionContains (collection, userFilters, detailed = false, ignoreCase = false) {
   const filters = Object.assign({}, userFilters);
   const details = [];
   const found = collection.some((obj) => {
@@ -39,7 +39,7 @@ function collectionContains(collection, userFilters, detailed = false, ignoreCas
             real: realValue,
           };
         }
-      } else if (!obj.hasOwnProperty(filter) || expectedValue != realValue) {
+      } else if (!Object.prototype.hasOwnProperty.call(obj, filter) || expectedValue != realValue) {
         diff[filter] = {
           expected: expectedValue,
           real: realValue,

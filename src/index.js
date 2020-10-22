@@ -3,4 +3,5 @@ module.exports = {
   date: require("./date/index"),
   string: require("./string/index"),
   object: require("./object/index"),
+  numbers: require("./numbers/index"),
 };

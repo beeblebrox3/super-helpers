@@ -23,11 +23,11 @@ module.exports = {
     const size = explodedPath.length;
 
     for (i = 0; i < size; i++) {
-      if (response instanceof Object === false) {
+      if (!(response instanceof Object)) {
         return defaultValue;
       }
 
-      if (response.hasOwnProperty(explodedPath[i])) {
+      if (Object.prototype.hasOwnProperty.call(response, explodedPath[i])) {
         response = response[explodedPath[i]];
       } else {
         return defaultValue;

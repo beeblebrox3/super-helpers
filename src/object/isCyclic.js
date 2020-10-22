@@ -5,7 +5,7 @@
  * @return {boolean}
  * @memberof object
  */
-function isCyclic(obj) {
+function isCyclic (obj) {
   const seenObjects = [];
 
   const detect = obj => {
@@ -16,7 +16,7 @@ function isCyclic(obj) {
 
       seenObjects.push(obj);
       for (const key in obj) {
-        if (obj.hasOwnProperty(key) && detect(obj[key])) {
+        if (Object.prototype.hasOwnProperty.call(obj, key) && detect(obj[key])) {
           return true;
         }
       }

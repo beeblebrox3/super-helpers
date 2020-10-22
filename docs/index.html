@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
   <meta charset='utf-8'>
   <title>super-helpers 1.1.0 | Documentation</title>
@@ -20,6 +20,9 @@
             placeholder='Filter'
             id='filter-input'
             class='col12 block input'
+            spellcheck='false'
+            autocapitalize='off'
+            autocorrect='off'
             type='text' />
           <div id='toc'>
             <ul class='list-reset h5 py1-ul'>
@@ -296,6 +299,8 @@
   
 
   
+
+  
     <div class='py1 quiet mt1 prose-big'>Static Members</div>
     <div class="clearfix">
   
@@ -366,6 +371,8 @@
 
       
     
+  
+
   
 
   
@@ -463,6 +470,8 @@ sortByObjectKey(data, <span class="hljs-string">"name"</span>)
   
 
   
+
+  
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
@@ -550,6 +559,8 @@ are some value of each array</p>
   
 
   
+
+  
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
@@ -608,6 +619,8 @@ indexCollection(data, <span class="hljs-string">"id"</span>)
   
   
   
+  
+
   
 
   
@@ -702,6 +715,8 @@ beautifyMinutes(3900, true) => 1h05m00s</p>
   
 
   
+
+  
 </section>
 
       </div>
@@ -762,6 +777,17 @@ beautifyMinutes(3900, true) => 1h05m00s</p>
       <div class='py1 quiet mt1 prose-big'>Returns</div>
       <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>:
         
+
+      
+    
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Related</div>
+    
+      
+        beautifySeconds
+Works the same way as beautifySeconds, but receive an amount of minutes
 
       
     
@@ -834,6 +860,8 @@ of seconds. The inverse of beautifySeconds</p>
 
       
     
+  
+
   
 
   
@@ -924,6 +952,8 @@ Dates on the format supported by the Date constructor</p>
   
 
   
+
+  
 </section>
 
       </div>
@@ -979,6 +1009,8 @@ Dates on the format supported by the Date constructor</p>
   
 
   
+
+  
 </section>
 
       </div>
@@ -1021,6 +1053,8 @@ Dates on the format supported by the Date constructor</p>
 
       
     
+  
+
   
 
   
@@ -1111,6 +1145,8 @@ It accepts an optional month and year to get the last day of an particular month
   
 
   
+
+  
 </section>
 
       </div>
@@ -1153,6 +1189,8 @@ It accepts an optional month and year to get the last day of an particular month
   
   
   
+  
+
   
 
   
@@ -1252,6 +1290,8 @@ users/create
   
 
   
+
+  
 </section>
 
       </div>
@@ -1320,6 +1360,8 @@ users/create
   
 
   
+
+  
 </section>
 
       </div>
@@ -1371,6 +1413,16 @@ users/create
       <div class='py1 quiet mt1 prose-big'>Returns</div>
       <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>:
         
+
+      
+    
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Related</div>
+    
+      
+        App.helpers.string.ucfirst
 
       
     
@@ -1442,6 +1494,8 @@ users/create
 
       
     
+  
+
   
 
   
@@ -1532,6 +1586,8 @@ and add "..." on the end of the string</p>
   
 
   
+
+  
 </section>
 
       </div>
@@ -1589,6 +1645,8 @@ Ref: <a href="http://stackoverflow.com/questions/105034/create-guid-uuid-in-java
   
 
   
+
+  
 </section>
 
       </div>
@@ -1631,6 +1689,8 @@ Ref: <a href="http://stackoverflow.com/questions/105034/create-guid-uuid-in-java
   
   
   
+  
+
   
 
   
@@ -1734,6 +1794,8 @@ Then you get the number 1.</p>
   
 
   
+
+  
 </section>
 
       </div>
@@ -1803,6 +1865,16 @@ Then you get the number 1.</p>
       <div class='py1 quiet mt1 prose-big'>Returns</div>
       <code>any</code>:
         
+
+      
+    
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Related</div>
+    
+      
+        getFlattened
 
       
     
@@ -1892,6 +1964,21 @@ Then you get the number 1.</p>
   
 
   
+    <div class='py1 quiet mt1 prose-big'>Related</div>
+    
+      
+        getFlattened
+Similar to getFlattened, but it set the value instead of return it.
+Example:
+Given the object let b = {a: {b: 1}}
+When you do setFlattened("a.b", 2)
+Then you get {a: {b: 2}}
+
+      
+    
+  
+
+  
 
   
 
@@ -1957,6 +2044,8 @@ Then you get the number 1.</p>
 
       
     
+  
+
   
 
   
@@ -2067,6 +2156,8 @@ Then you get the number 1.</p>
   
 
   
+
+  
 </section>
 
       </div>
@@ -2156,6 +2247,8 @@ Example: flatten({a: {b: 2}}) will return {"a.b": 2}</p>
   
 
   
+
+  
 </section>
 
       </div>
@@ -2212,6 +2305,8 @@ Example: flatten({a: {b: 2}}) will return {"a.b": 2}</p>
 
       
     
+  
+
   
 
   
