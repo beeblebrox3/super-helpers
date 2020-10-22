@@ -1,15 +1,16 @@
 language: node_js
 
 node_js:
-- '11'
+- '15'
+- '14'
+- '12'
 - '10'
-- '8'
 
 install:
-  - yarn
+  - npm install
 
 script:
-  - yarn test
+  - npm test
   - sonar-scanner
 
 addons:
