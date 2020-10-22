@@ -5,27 +5,27 @@
  * @return {boolean}
  * @memberof object
  */
-function isCyclic(obj) {
-    let seenObjects = [];
+function isCyclic (obj) {
+  const seenObjects = [];
 
-    const detect = obj => {
-        if (obj && typeof obj === "object") {
-            if (seenObjects.includes(obj)) {
-                return true;
-            }
+  const detect = obj => {
+    if (obj && typeof obj === "object") {
+      if (seenObjects.includes(obj)) {
+        return true;
+      }
 
-            seenObjects.push(obj);
-            for (const key in obj) {
-                if (obj.hasOwnProperty(key) && detect(obj[key])) {
-                    return true;
-                }
-            }
+      seenObjects.push(obj);
+      for (const key in obj) {
+        if (Object.prototype.hasOwnProperty.call(obj, key) && detect(obj[key])) {
+          return true;
         }
+      }
+    }
 
-        return false;
-    };
+    return false;
+  };
 
-    return detect(obj);
+  return detect(obj);
 }
 
 module.exports = isCyclic;

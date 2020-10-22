@@ -1,6 +1,6 @@
 /** @namespace object */
 module.exports = {
-    /**
+  /**
      * Get element from obj by string path
      * Example:
      * Given the object let a = {a: {b: 1}}
@@ -12,32 +12,32 @@ module.exports = {
      * @return {any}
      * @memberof object
      */
-    getFlattened: function (path, obj, defaultValue = null) {
-        if (typeof path !== "string") {
-            throw Error("path must be string");
-        }
+  getFlattened: function (path, obj, defaultValue = null) {
+    if (typeof path !== "string") {
+      throw Error("path must be string");
+    }
 
-        let i;
-        let response = obj;
-        const explodedPath = path.split(".");
-        const size = explodedPath.length;
+    let i;
+    let response = obj;
+    const explodedPath = path.split(".");
+    const size = explodedPath.length;
 
-        for (i = 0; i < size; i++) {
-            if (response instanceof Object === false) {
-                return defaultValue;
-            }
+    for (i = 0; i < size; i++) {
+      if (response instanceof Object === false) {
+        return defaultValue;
+      }
 
-            if (response.hasOwnProperty(explodedPath[i])) {
-                response = response[explodedPath[i]];
-            } else {
-                return defaultValue;
-            }
-        }
+      if (Object.prototype.hasOwnProperty.call(response, explodedPath[i])) {
+        response = response[explodedPath[i]];
+      } else {
+        return defaultValue;
+      }
+    }
 
-        return response;
-    },
+    return response;
+  },
 
-    /**
+  /**
      * Receives a list of paths and use getFlattened to get the first existent value
      * @param {String[]} paths
      * @param {Object} obj
@@ -46,25 +46,25 @@ module.exports = {
      * @see getFlattened
      * @memberof object
      */
-    getFirstFlattened: function (paths, obj, defaultValue = null) {
-        if (!Array.isArray(paths)) {
-            throw new Error("paths must be an array of strings");
-        }
+  getFirstFlattened: function (paths, obj, defaultValue = null) {
+    if (!Array.isArray(paths)) {
+      throw new Error("paths must be an array of strings");
+    }
 
-        let res = defaultValue;
-        paths.some(path => {
-            const result = this.getFlattened(path, obj, defaultValue);
-            if (result !== defaultValue) {
-                res = result;
-                return true;
-            }
-            return false;
-        });
+    let res = defaultValue;
+    paths.some(path => {
+      const result = this.getFlattened(path, obj, defaultValue);
+      if (result !== defaultValue) {
+        res = result;
+        return true;
+      }
+      return false;
+    });
 
-        return res;
-    },
+    return res;
+  },
 
-    /**
+  /**
      * @see getFlattened
      * Similar to getFlattened, but it set the value instead of return it.
      * Example:
@@ -77,45 +77,45 @@ module.exports = {
      * @return {*}
      * @memberof object
      */
-    setFlattened: function (path, newValue, obj) {
-        "use strict";
+  setFlattened: function (path, newValue, obj) {
+    "use strict";
 
-        const explodedPath = path.split(".");
-        const laps = explodedPath.length - 1;
-        let i;
-        let temp = obj;
+    const explodedPath = path.split(".");
+    const laps = explodedPath.length - 1;
+    let i;
+    let temp = obj;
 
-        for (i = 0; i < laps; i += 1) {
-            if (temp[explodedPath[i]] === undefined) {
-                temp[explodedPath[i]] = {};
-            }
+    for (i = 0; i < laps; i += 1) {
+      if (temp[explodedPath[i]] === undefined) {
+        temp[explodedPath[i]] = {};
+      }
 
-            temp = temp[explodedPath[i]];
-        }
+      temp = temp[explodedPath[i]];
+    }
 
-        temp[explodedPath[laps]] = newValue;
-        return obj;
-    },
+    temp[explodedPath[laps]] = newValue;
+    return obj;
+  },
 
-    /**
+  /**
      * Get first key of an object or null if it doesn't have keys
      * @param {Object} obj
      * @return {*}
      * @memberof object
      */
-    firstKey: function (obj) {
-        "use strict";
+  firstKey: function (obj) {
+    "use strict";
 
-        if (Object.getPrototypeOf(obj) !== Object.prototype) {
-            throw Error("obj must be an Object");
-        }
+    if (Object.getPrototypeOf(obj) !== Object.prototype) {
+      throw Error("obj must be an Object");
+    }
 
-        return Object.keys(obj)[0] || null;
-    },
+    return Object.keys(obj)[0] || null;
+  },
 
-    collectionContains: require("./collectionContains"),
+  collectionContains: require("./collectionContains"),
 
-    flatten: require("./flatten"),
+  flatten: require("./flatten"),
 
-    isCyclic: require("./isCyclic"),
+  isCyclic: require("./isCyclic"),
 };

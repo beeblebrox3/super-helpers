@@ -14,21 +14,21 @@
  * // output will be [{id: 2, name: "abc"}, {id: 1, name: "foo"}]
  */
 module.exports = function sortByObjectKey (data, prop, direction = "asc") {
-    if (["asc", "desc"].indexOf(direction) === -1) {
-        throw new Error("Direction should be asc or desc");
+  if (["asc", "desc"].indexOf(direction) === -1) {
+    throw new Error("Direction should be asc or desc");
+  }
+
+  return data.sort((a, b) => {
+    let response = 0;
+    const ap = a[prop];
+    const bp = b[prop];
+
+    if (ap < bp) {
+      response = direction === "asc" ? -1 : 1;
+    } else if (ap > bp) {
+      response = direction === "asc" ? 1 : -1;
     }
 
-    return data.sort((a, b) => {
-        let response = 0;
-        let ap = a[prop];
-        let bp = b[prop];
-
-        if (ap < bp) {
-            response = direction === "asc" ? -1 : 1;
-        } else if (ap > bp) {
-            response = direction === "asc" ? 1 : -1;
-        }
-
-        return response;
-    });
+    return response;
+  });
 };

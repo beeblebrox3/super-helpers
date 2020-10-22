@@ -9,6 +9,7 @@
     "rules": {
         "quotes": ["warn", "double"],
         "space-before-function-paren": ["warn", "always"],
-        "arrow-parens": "off"
+        "arrow-parens": "off",
+        "max-len": ["error", 120]
     }
 }

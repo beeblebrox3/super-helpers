@@ -12,32 +12,31 @@ const CIRCULAR_REF_ERROR_MSG
  * @return {Object}
  * @memberof object
  */
-function flatten(obj, separator = ".", prefix = "") {
+function flatten (obj, separator = ".", prefix = "") {
+  if (isCyclic(obj)) {
+    throw new Error(CIRCULAR_REF_ERROR_MSG);
+  }
 
-    if (isCyclic(obj)) {
-        throw new Error(CIRCULAR_REF_ERROR_MSG);
-    }
+  let res = {};
 
-    let res = {};
+  const isObject = (r) => r !== undefined && r !== null && Object.getPrototypeOf(r) === Object.prototype;
 
-    const isObject = (r) => r !== undefined && r !== null && Object.getPrototypeOf(r) === Object.prototype;
-
-    Object.keys(obj).forEach(index => {
-        const val = obj[index];
-        const newIndex = prefix.length > 0
+  Object.keys(obj).forEach(index => {
+    const val = obj[index];
+    const newIndex = prefix.length > 0
             ? `${prefix}${separator}${index}`
             : index;
 
-        if (isObject(val) || Array.isArray(val)) {
-            const objF = flatten(val, separator, newIndex);
-            res = Object.assign(res, objF);
-            return;
-        }
+    if (isObject(val) || Array.isArray(val)) {
+      const objF = flatten(val, separator, newIndex);
+      res = Object.assign(res, objF);
+      return;
+    }
 
-        res[newIndex] = val;
-    });
+    res[newIndex] = val;
+  });
 
-    return res;
+  return res;
 }
 
 module.exports = flatten;
