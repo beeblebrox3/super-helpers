@@ -12,7 +12,7 @@
 module.exports = function fromBeutyToSeconds (theTime) {
   let response = 0;
 
-  const hours = /(\d+)h/.exec(theTime);
+  const hours = /^(\d+)h/.exec(theTime);
   const minutes = /(\d{1,2})m/.exec(theTime);
   const seconds = /(\d{1,2})s/.exec(theTime);
 
