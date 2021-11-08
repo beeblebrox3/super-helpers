@@ -8,6 +8,18 @@
  * @param {Boolean} [ignoreCase] if true, will ignore case when matching strings
  * @return {Boolean|Object}
  * @memberof object
+ *
+ * @example single filter
+ * const fruits = [{ name: 'banana', weight: 200, color: 'yellow' }, { name: 'tomato', weight: 150, color: 'red' }]
+ * collectionContains(fruits, { name: 'banana' }); // will return true
+ *
+ * @example multiple filters
+ * const fruits = [{ name: 'banana', weight: 200, color: 'yellow' }, { name: 'tomato', weight: 150, color: 'red' }]
+ * collectionContains(fruits, { name: 'banana', color: 'red' }); // will return false
+ *
+ * @example custom comparison logic
+ * const fruits = [{ name: 'banana', weight: 200, color: 'yellow' }, { name: 'tomato', weight: 150, color: 'red' }]
+ * collectionContains(fruits, { weight: v => v > 100 }); // will return true
  */
 function collectionContains (collection, userFilters, detailed = false, ignoreCase = false) {
   const filters = Object.assign({}, userFilters);

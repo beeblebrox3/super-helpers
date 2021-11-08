@@ -3,13 +3,15 @@ const CIRCULAR_REF_ERROR_MSG = "Object cannot be flattened due to circular refer
 
 /**
  * Transforms an nested object into an flat object with dotted notation
- * Example: flatten({a: {b: 2}}) will return {"a.b": 2}
  *
  * @param {Object|Array} obj the source object or array
  * @param {string} [separator="."]
  * @param {string} [prefix=""] All keys will be prefixed with this arg
  * @return {Object}
  * @memberof object
+ *
+ * @example
+ * flatten({ a: { b: 2 } } // { "a.b": 2 }
  */
 function flatten (obj, separator = ".", prefix = "") {
   if (isCyclic(obj)) {

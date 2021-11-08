@@ -4,6 +4,12 @@
  * @param {Object} obj the source to be checked
  * @return {boolean}
  * @memberof object
+ *
+ * @example
+ * const obj { a: 1, b: 2 }
+ * obj.c = obj;
+ *
+ * isCyclic(obj) // true
  */
 function isCyclic (obj) {
   const seenObjects = [];

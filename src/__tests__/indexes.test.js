@@ -17,16 +17,17 @@ test("test if indexes files", () => {
     "date.firstDayOfTheMonth",
     "date.lastDayOfTheMonth",
     "object.getFlattened",
+    "object.getFlattenedArray",
     "object.setFlattened",
     "object.firstKey",
     "object.collectionContains",
     "object.flatten",
+    "object.getFlattenedArray",
     "string.resolveUrl",
     "string.ucfirst",
     "string.capitalize",
     "string.ucwords",
     "string.excerpt",
-    "string.uuid",
   ].forEach(key => {
     try {
       expect(typeof getFlattened(key, lib)).toBe("function");
