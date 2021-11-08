@@ -12,6 +12,7 @@
   },
   "scripts": {
     "test": "jest",
+    "test:coverage": "jest --collect-coverage",
     "test-watch": "jest --watch",
     "docs": "jsdoc -d docs src/**/*.js ./README.md",
     "prepublishOnly": "npm run docs",
