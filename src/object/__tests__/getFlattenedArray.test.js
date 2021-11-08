@@ -68,3 +68,20 @@ test('Test getFlattenedArray with array at the end', () => {
   expect(getFlattenedArray(['a', 'b'], input)).toStrictEqual(expected);
 });
 
+test('Should omit key if it doesnt exists', () => {
+  const input = {
+    a: 1,
+    b: [
+      [
+        { c: 2, d: 2 },
+        { c: 3, d: 3 },
+      ],
+    ],
+  };
+
+  const expected = {
+    a: 1,
+  };
+
+  expect(getFlattenedArray(['a', 'x.x.x'], input)).toStrictEqual(expected);
+});

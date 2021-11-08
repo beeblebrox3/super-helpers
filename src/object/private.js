@@ -5,7 +5,7 @@
  * @ignore
  */
 exports.isArrayPosition = function isArrayPosition (val) {
-  return /\[\d+\]/.test(val);
+  return /[\d+]/.test(val);
 };
 
 /**
@@ -18,3 +18,5 @@ exports.isArrayPosition = function isArrayPosition (val) {
 exports.getRealArrayPosition = function getRealArrayPosition (val) {
   return val.substring(1, val.length - 1);
 };
+
+exports.UNIVERSAL_UNDEFINED_VALUE_INDICATOR = '@beeblebrox3/super-helpers:undefined_valud_indicator';

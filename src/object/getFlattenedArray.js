@@ -1,4 +1,6 @@
-const { getFlattened, setFlattened } = require('./index');
+const getFlattened = require('./getFlattened');
+const setFlattened = require('./setFlattened');
+const { UNIVERSAL_UNDEFINED_VALUE_INDICATOR } = require('./private');
 
 /**
  * @param {string[]} paths
@@ -91,7 +93,10 @@ module.exports = function getFlattenedArray (paths, obj) {
     }
 
     pathsToGet.forEach(currentPath => {
-      response = setFlattened(currentPath, getFlattened(currentPath, obj), response);
+      const value = getFlattened(currentPath, obj, UNIVERSAL_UNDEFINED_VALUE_INDICATOR);
+      if (value !== UNIVERSAL_UNDEFINED_VALUE_INDICATOR) {
+        response = setFlattened(currentPath, value, response);
+      }
     });
   });
 
