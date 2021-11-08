@@ -4,7 +4,7 @@ const { getFlattened, setFlattened } = require('./index');
  * @param {string[]} paths
  * @param {object} obj
  * @return {string[]}
- * @internal
+ * @ignore
  */
 function handleSpread (paths, obj) {
   const firstPathSplitted = paths[0].split('.');
@@ -15,9 +15,9 @@ function handleSpread (paths, obj) {
   const arraySize = getFlattened(path, obj, []).length;
 
   const resp = [];
-  paths.forEach(path => {
+  paths.forEach(localPath => {
     for (let i = 0; i < arraySize; i++) {
-      resp.push(path.replace('*', `[${i}]`));
+      resp.push(localPath.replace('*', `[${i}]`));
     }
   });
 
@@ -28,9 +28,10 @@ function handleSpread (paths, obj) {
  * Extracts a fragment of an object, including nested properties and array support.
  * Note: it doen´t work when the keys have '.'.
  *
- * @param {string[]} paths to extract a value from every object in a collection use '[*]'. eg: ['a.[*].name']
+ * @param {string[]} paths to extract a value from every object in a collection use '*'. eg: ['a.*.name']
  * @param {object} obj
  * @return {object}
+ * @memberof object
  *
  * @example
  * const input = {
