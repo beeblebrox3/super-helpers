@@ -12,7 +12,7 @@
   "rules": {
     "quotes": [
       "warn",
-      "double"
+      "single"
     ],
     "space-before-function-paren": [
       "warn",
@@ -25,6 +25,6 @@
     "arrow-parens": "off",
     "object-property-newline": "off",
     "array-element-newline": "off",
-    "max-len": ["error", 120],
+    "max-len": ["error", 120]
   }
 }

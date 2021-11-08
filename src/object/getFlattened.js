@@ -1,4 +1,4 @@
-const { getRealArrayPosition, isArrayPosition } = require("./private");
+const { getRealArrayPosition, isArrayPosition } = require('./private');
 
 /**
  * Get element from obj by string path
@@ -17,13 +17,13 @@ const { getRealArrayPosition, isArrayPosition } = require("./private");
  * getFlattened('a.c', a, 2020) // 2020
  */
 module.exports = function getFlattened (path, obj, defaultValue = null) {
-  if (typeof path !== "string") {
-    throw Error("path must be string");
+  if (typeof path !== 'string') {
+    throw Error('path must be string');
   }
 
   let i;
   let response = obj;
-  const explodedPath = path.split(".");
+  const explodedPath = path.split('.');
   const size = explodedPath.length;
 
   for (i = 0; i < size; i++) {

@@ -1,4 +1,4 @@
-const isNumeric = require("./isNumeric");
+const isNumeric = require('./isNumeric');
 
 /**
  * Checks if value is an integer

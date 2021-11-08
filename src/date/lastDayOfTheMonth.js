@@ -1,4 +1,4 @@
-const leadingZero = require("./leadingZero");
+const leadingZero = require('./leadingZero');
 
 /**
  * Returns the last day of the month on the format: yyyy-mm-dd

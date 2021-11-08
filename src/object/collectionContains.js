@@ -35,19 +35,19 @@ function collectionContains (collection, userFilters, detailed = false, ignoreCa
       realValue = obj[filter];
 
       if (ignoreCase === true) {
-        if (typeof expectedValue === "string" || expectedValue instanceof String) {
+        if (typeof expectedValue === 'string' || expectedValue instanceof String) {
           expectedValue = expectedValue.toLowerCase();
         }
 
-        if (typeof realValue === "string" || realValue instanceof String) {
+        if (typeof realValue === 'string' || realValue instanceof String) {
           realValue = realValue.toLowerCase();
         }
       }
 
-      if (typeof filters[filter] === "function") {
+      if (typeof filters[filter] === 'function') {
         if (!filters[filter](realValue)) {
           diff[filter] = {
-            expected: "custom validation", // @todo
+            expected: 'custom validation', // @todo
             real: realValue,
           };
         }

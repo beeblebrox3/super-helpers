@@ -1,4 +1,4 @@
-const { isArrayPosition, getRealArrayPosition } = require("./private");
+const { isArrayPosition, getRealArrayPosition } = require('./private');
 
 /**
  * @see getFlattened
@@ -20,7 +20,7 @@ const { isArrayPosition, getRealArrayPosition } = require("./private");
  * setFlattened("a.[0].c", 2, {}) // { a: [{ c: 2 } ]}
  */
 module.exports = function setFlattened (path, newValue, obj) {
-  const explodedPath = path.split(".");
+  const explodedPath = path.split('.');
   const laps = explodedPath.length - 1;
   let i;
   let temp = obj;

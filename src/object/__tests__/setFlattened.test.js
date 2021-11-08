@@ -1,7 +1,7 @@
-const setFlattened = require("../setFlattened");
+const setFlattened = require('../setFlattened');
 
-test("Should work with nested objects", () => {
-  const path = "a.b.c.d.e";
+test('Should work with nested objects', () => {
+  const path = 'a.b.c.d.e';
   const value = 222;
   const expected = {
     a: {
@@ -18,8 +18,8 @@ test("Should work with nested objects", () => {
   expect(setFlattened(path, value, {})).toStrictEqual(expected);
 });
 
-test("Should create arrays", () => {
-  const path = "a.[0].b.[0].d";
+test('Should create arrays', () => {
+  const path = 'a.[0].b.[0].d';
   const value = 222;
   const expected = {
     a: [
@@ -30,16 +30,16 @@ test("Should create arrays", () => {
   expect(setFlattened(path, value, {})).toStrictEqual(expected);
 });
 
-test("Should create top level array", () => {
-  const path = "[0].b";
+test('Should create top level array', () => {
+  const path = '[0].b';
   const value = 222;
   const expected = [{ b: 222 }];
 
   expect(setFlattened(path, value, [])).toStrictEqual(expected);
 });
 
-test("Should create array with empty positions", () => {
-  const path = "a.[22].c";
+test('Should create array with empty positions', () => {
+  const path = 'a.[22].c';
   const value = 222;
   const expected = {
     a: [],
@@ -49,8 +49,8 @@ test("Should create array with empty positions", () => {
   expect(setFlattened(path, value, {})).toStrictEqual(expected);
 });
 
-test("Should create array at the last level", () => {
-  const path = "a.[0]";
+test('Should create array at the last level', () => {
+  const path = 'a.[0]';
   const value = 222;
   const expected = {
     a: [value],

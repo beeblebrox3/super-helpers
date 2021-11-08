@@ -1,8 +1,8 @@
 jest.autoMockOff();
 
-const isCyclic = require("../isCyclic");
+const isCyclic = require('../isCyclic');
 
-test("test isCyclic function", () => {
+test('test isCyclic function', () => {
   const a = {};
   const b = {};
   const c = {};

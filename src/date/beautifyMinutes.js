@@ -1,4 +1,4 @@
-const beautifySeconds = require("./beautifySeconds");
+const beautifySeconds = require('./beautifySeconds');
 
 /**
  * @see beautifySeconds

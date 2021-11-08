@@ -15,7 +15,7 @@ function isCyclic (obj) {
   const seenObjects = [];
 
   const detect = obj => {
-    if (obj && typeof obj === "object") {
+    if (obj && typeof obj === 'object') {
       if (seenObjects.includes(obj)) {
         return true;
       }

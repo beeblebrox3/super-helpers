@@ -16,7 +16,10 @@
     "docs-md": "./node_modules/.bin/documentation build src/index.js -f md -o docs/docs.md",
     "docs-html": "./node_modules/.bin/documentation build src/index.js -f html -o docs",
     "docs": "npm run docs-html && npm run docs-md",
-    "prepublishOnly": "npm run docs"
+    "prepublishOnly": "npm run docs",
+    "lint": "eslint ./src",
+    "lint:fix": "eslint --fix ./src",
+    "lint:errors": "eslint --quiet ./src"
   },
   "devDependencies": {
     "@types/jest": "^26.0",

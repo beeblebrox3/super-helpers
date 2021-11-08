@@ -21,8 +21,8 @@ module.exports = {
    * @memberof string
    *
    */
-  resolveUrl: function (url, basePath = "") {
-    if (url.indexOf("//") === -1) {
+  resolveUrl: function (url, basePath = '') {
+    if (url.indexOf('//') === -1) {
       return basePath + url;
     }
 
@@ -36,7 +36,7 @@ module.exports = {
    * @memberof string
    */
   ucfirst: function (string) {
-    "use strict";
+    'use strict';
 
     string = string.toLocaleLowerCase();
     return string.charAt(0).toLocaleUpperCase() + string.substr(1);
@@ -59,7 +59,7 @@ module.exports = {
    * @memberof string
    */
   ucwords: function (string) {
-    return string.split(" ").map(word => this.ucfirst(word)).join(" ");
+    return string.split(' ').map(word => this.ucfirst(word)).join(' ');
   },
 
   /**
@@ -73,19 +73,19 @@ module.exports = {
    */
   excerpt: function (text, maxLength) {
     if (isNaN(maxLength)) {
-      throw new Error("maxLength should be an integer");
+      throw new Error('maxLength should be an integer');
     }
 
     if (maxLength < 1) {
-      throw new Error("maxLength must be greater than 0");
+      throw new Error('maxLength must be greater than 0');
     }
 
-    if (typeof text !== "string") {
-      throw new Error("text must be string");
+    if (typeof text !== 'string') {
+      throw new Error('text must be string');
     }
 
     if (text.length > maxLength) {
-      const exploded = text.split(" ");
+      const exploded = text.split(' ');
       let counter = 0;
       const response = [];
 
@@ -98,7 +98,7 @@ module.exports = {
         }
       }
 
-      text = response.join(" ") + "...";
+      text = response.join(' ') + '...';
     }
 
     return text;

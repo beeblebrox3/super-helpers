@@ -7,9 +7,9 @@
  * @example
  * firstKey({ a: 2, b: 2 }) // 'a'
  */
-module.exports = function firstKey(obj) {
+module.exports = function firstKey (obj) {
   if (Object.getPrototypeOf(obj) !== Object.prototype) {
-    throw Error("obj must be an Object");
+    throw Error('obj must be an Object');
   }
 
   return Object.keys(obj)[0] || null;

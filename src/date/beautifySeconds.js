@@ -1,4 +1,4 @@
-const leadingZero = require("./leadingZero");
+const leadingZero = require('./leadingZero');
 
 /**
  * Receive a number of seconds and return an string representing the amount of
@@ -22,7 +22,7 @@ const leadingZero = require("./leadingZero");
  * beautifyMinutes(3900, true) => 1h05m00s
  */
 module.exports = function beautifySeconds (seconds, showSeconds = true) {
-  let response = "";
+  let response = '';
   const theTime = {
     hours: 0,
     minutes: 0,
@@ -36,10 +36,10 @@ module.exports = function beautifySeconds (seconds, showSeconds = true) {
   if (theTime.hours) {
     response += `${theTime.hours}h`;
     response += `${leadingZero(theTime.minutes)}m`;
-    response += showSeconds ? `${leadingZero(theTime.seconds)}s` : "";
+    response += showSeconds ? `${leadingZero(theTime.seconds)}s` : '';
   } else if (theTime.minutes) {
     response += `${leadingZero(theTime.minutes)}m`;
-    response += showSeconds ? `${leadingZero(theTime.seconds)}s` : "";
+    response += showSeconds ? `${leadingZero(theTime.seconds)}s` : '';
   } else if (showSeconds) {
     response += `${leadingZero(theTime.seconds)}s`;
   }

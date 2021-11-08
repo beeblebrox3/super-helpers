@@ -9,7 +9,7 @@
  * @example
  * fromBeutyToSeconds('1h39m5s') // 5945
  */
-module.exports = function fromBeutyToSeconds(theTime) {
+module.exports = function fromBeutyToSeconds (theTime) {
   let response = 0;
 
   const hours = /(\d+)h/.exec(theTime);

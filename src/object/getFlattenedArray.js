@@ -1,4 +1,4 @@
-const { getFlattened, setFlattened } = require("./index");
+const { getFlattened, setFlattened } = require('./index');
 
 /**
  * @param {string[]} paths
@@ -7,17 +7,17 @@ const { getFlattened, setFlattened } = require("./index");
  * @internal
  */
 function handleSpread (paths, obj) {
-  const firstPathSplitted = paths[0].split(".");
-  const spreadPosition = firstPathSplitted.indexOf("*");
+  const firstPathSplitted = paths[0].split('.');
+  const spreadPosition = firstPathSplitted.indexOf('*');
   if (spreadPosition === -1) return null;
 
-  const path = firstPathSplitted.slice(0, spreadPosition).join(".");
+  const path = firstPathSplitted.slice(0, spreadPosition).join('.');
   const arraySize = getFlattened(path, obj, []).length;
 
   const resp = [];
   paths.forEach(path => {
     for (let i = 0; i < arraySize; i++) {
-      resp.push(path.replace("*", `[${i}]`));
+      resp.push(path.replace('*', `[${i}]`));
     }
   });
 
@@ -60,18 +60,18 @@ function handleSpread (paths, obj) {
  */
 module.exports = function getFlattenedArray (paths, obj) {
   if (!Array.isArray(paths)) {
-    throw Error("paths must be array");
+    throw Error('paths must be array');
   }
 
-  if (paths.some(path => typeof path !== "string")) {
-    throw Error("paths must be an array of strings");
+  if (paths.some(path => typeof path !== 'string')) {
+    throw Error('paths must be an array of strings');
   }
 
   let response = {};
   paths.forEach(path => {
     let pathsToGet = [];
 
-    if (path.indexOf("*") > -1) {
+    if (path.indexOf('*') > -1) {
       let resp = null;
       let tempPaths = [path];
       do {

@@ -16,6 +16,6 @@
  * isNumeric(123); // true
  */
 module.exports = value => {
-  if (typeof value === "number") return true;
-  return typeof value === "string" && value == +value && value !== "";
+  if (typeof value === 'number') return true;
+  return typeof value === 'string' && value == +value && value !== '';
 };

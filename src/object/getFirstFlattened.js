@@ -1,4 +1,4 @@
-const getFlattened = require("./getFlattened");
+const getFlattened = require('./getFlattened');
 
 /**
  * Receives a list of paths and use getFlattened to get the first existent value
@@ -21,7 +21,7 @@ const getFlattened = require("./getFlattened");
  */
 module.exports = function getFirstFlattened (paths, obj, defaultValue = null) {
   if (!Array.isArray(paths)) {
-    throw new Error("paths must be an array of strings");
+    throw new Error('paths must be an array of strings');
   }
 
   let res = defaultValue;
