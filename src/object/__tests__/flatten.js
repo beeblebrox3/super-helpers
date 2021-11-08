@@ -1,18 +1,18 @@
 jest.autoMockOff();
 
-const flatten = require("../flatten");
-const { setFlattened } = require("../index");
+const flatten = require('../flatten');
+const { setFlattened } = require('../index');
 
-test("test flatten function", () => {
+test('test flatten function', () => {
   const input = {
     a: 1,
-    b: "a",
-    c: ["a", "b"],
+    b: 'a',
+    c: ['a', 'b'],
     d: {
       e: {
         g: 1,
       },
-      ee: "a",
+      ee: 'a',
       c: {
         a: { a: { b: 1 } },
       },
@@ -21,16 +21,16 @@ test("test flatten function", () => {
 
   const res = flatten(input);
 
-  expect(res["a"]).toBe(1);
-  expect(res["b"]).toBe("a");
-  expect(res["c.0"]).toBe("a");
-  expect(res["c.1"]).toBe("b");
-  expect(res["d.e.g"]).toBe(1);
-  expect(res["d.ee"]).toBe("a");
-  expect(res["d.c.a.a.b"]).toBe(1);
+  expect(res['a']).toBe(1);
+  expect(res['b']).toBe('a');
+  expect(res['c.0']).toBe('a');
+  expect(res['c.1']).toBe('b');
+  expect(res['d.e.g']).toBe(1);
+  expect(res['d.ee']).toBe('a');
+  expect(res['d.c.a.a.b']).toBe(1);
 });
 
-test("test flatten function on circular reference (cyclic reference)", () => {
+test('test flatten function on circular reference (cyclic reference)', () => {
   const a = {};
   const b = {};
   a.b = b;
@@ -39,7 +39,7 @@ test("test flatten function on circular reference (cyclic reference)", () => {
   expect(() => flatten(a)).toThrow();
 });
 
-test("test flatten function with null and undefined", () => {
+test('test flatten function with null and undefined', () => {
   const input = {
     a: 1,
     b: null,
@@ -51,20 +51,20 @@ test("test flatten function with null and undefined", () => {
   };
 
   const res = flatten(input);
-  expect(res["a"]).toBe(1);
-  expect(res["b"]).toBe(null);
-  expect(res["c"]).toBe(undefined);
-  expect(res["d.e"]).toBe(2);
-  expect(res["d.f"]).toBe(undefined);
+  expect(res['a']).toBe(1);
+  expect(res['b']).toBe(null);
+  expect(res['c']).toBe(undefined);
+  expect(res['d.e']).toBe(2);
+  expect(res['d.f']).toBe(undefined);
 });
 
-test("another use case for setFlattened", () => {
+test('another use case for setFlattened', () => {
   const source = [
-    "a",
-    "a.a",
-    "a.b",
-    "a.b.c",
-    "a.b.d",
+    'a',
+    'a.a',
+    'a.b',
+    'a.b.c',
+    'a.b.d',
   ];
 
   const res = {};

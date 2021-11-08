@@ -1,24 +1,26 @@
-const isCyclic = require("./isCyclic");
-const CIRCULAR_REF_ERROR_MSG = "Object cannot be flattened due to circular references on it";
+const isCyclic = require('./isCyclic');
+const CIRCULAR_REF_ERROR_MSG = 'Object cannot be flattened due to circular references on it';
 
 /**
  * Transforms an nested object into an flat object with dotted notation
- * Example: flatten({a: {b: 2}}) will return {"a.b": 2}
  *
  * @param {Object|Array} obj the source object or array
  * @param {string} [separator="."]
  * @param {string} [prefix=""] All keys will be prefixed with this arg
  * @return {Object}
  * @memberof object
+ *
+ * @example
+ * flatten({ a: { b: 2 } } // { "a.b": 2 }
  */
-function flatten (obj, separator = ".", prefix = "") {
+function flatten (obj, separator = '.', prefix = '') {
   if (isCyclic(obj)) {
     throw new Error(CIRCULAR_REF_ERROR_MSG);
   }
 
   const isObject = r => r !== null && r !== undefined && Object.getPrototypeOf(r) === Object.prototype;
 
-  const _flatten = (obj, separator = ".", prefix = "") => {
+  const _flatten = (obj, separator = '.', prefix = '') => {
     let res = {};
 
     Object.keys(obj).forEach(index => {

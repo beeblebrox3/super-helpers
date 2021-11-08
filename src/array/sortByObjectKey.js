@@ -13,9 +13,9 @@
  * sortByObjectKey(data, "name")
  * // output will be [{id: 2, name: "abc"}, {id: 1, name: "foo"}]
  */
-module.exports = function sortByObjectKey (data, prop, direction = "asc") {
-  if (["asc", "desc"].indexOf(direction) === -1) {
-    throw new Error("Direction should be asc or desc");
+module.exports = function sortByObjectKey (data, prop, direction = 'asc') {
+  if (['asc', 'desc'].indexOf(direction) === -1) {
+    throw new Error('Direction should be asc or desc');
   }
 
   return data.sort((a, b) => {
@@ -24,9 +24,9 @@ module.exports = function sortByObjectKey (data, prop, direction = "asc") {
     const bp = b[prop];
 
     if (ap < bp) {
-      response = direction === "asc" ? -1 : 1;
+      response = direction === 'asc' ? -1 : 1;
     } else if (ap > bp) {
-      response = direction === "asc" ? 1 : -1;
+      response = direction === 'asc' ? 1 : -1;
     }
 
     return response;
