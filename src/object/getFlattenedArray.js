@@ -9,7 +9,9 @@ const { getFlattened, setFlattened } = require('./index');
 function handleSpread (paths, obj) {
   const firstPathSplitted = paths[0].split('.');
   const spreadPosition = firstPathSplitted.indexOf('*');
-  if (spreadPosition === -1) return null;
+  if (spreadPosition === -1) {
+    return null;
+  }
 
   const path = firstPathSplitted.slice(0, spreadPosition).join('.');
   const arraySize = getFlattened(path, obj, []).length;
@@ -73,7 +75,7 @@ module.exports = function getFlattenedArray (paths, obj) {
     let pathsToGet = [];
 
     if (path.indexOf('*') > -1) {
-      let resp = null;
+      let resp;
       let tempPaths = [path];
       do {
         resp = handleSpread(tempPaths, obj);
