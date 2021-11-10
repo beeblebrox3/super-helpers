@@ -5,7 +5,7 @@ const { UNIVERSAL_UNDEFINED_VALUE_INDICATOR } = require('./private');
 /**
  * @param {string[]} paths
  * @param {object} obj
- * @return {string[]}
+ * @return {string[]|null}
  * @ignore
  */
 function handleSpread (paths, obj) {
@@ -84,7 +84,7 @@ module.exports = function getFlattenedArray (paths, obj) {
         if (resp !== null) {
           tempPaths = resp;
         }
-      } while (resp !== null);
+      } while (resp !== null && resp.length > 0);
       pathsToGet = tempPaths;
 
       // contains array

@@ -85,3 +85,9 @@ test('Should omit key if it doesnt exists', () => {
 
   expect(getFlattenedArray(['a', 'x.x.x'], input)).toStrictEqual(expected);
 });
+
+test('[regression] Should handle paths with arrays that doenst exists', () => {
+  const input = {};
+  const expected = {};
+  expect(getFlattenedArray(['a', 'a.b', 'a.*.b'], input)).toStrictEqual(expected);
+});
