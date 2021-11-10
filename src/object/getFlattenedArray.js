@@ -1,6 +1,6 @@
 const getFlattened = require('./getFlattened');
 const setFlattened = require('./setFlattened');
-const { UNIVERSAL_UNDEFINED_VALUE_INDICATOR } = require('./private');
+const {UNIVERSAL_UNDEFINED_VALUE_INDICATOR} = require('./private');
 
 /**
  * @param {string[]} paths
@@ -8,7 +8,7 @@ const { UNIVERSAL_UNDEFINED_VALUE_INDICATOR } = require('./private');
  * @return {string[]|null}
  * @ignore
  */
-function handleSpread (paths, obj) {
+function handleSpread(paths, obj) {
   const firstPathSplitted = paths[0].split('.');
   const spreadPosition = firstPathSplitted.indexOf('*');
   if (spreadPosition === -1) {
@@ -26,6 +26,20 @@ function handleSpread (paths, obj) {
   });
 
   return resp;
+}
+
+/**
+ * validate if paths are valid
+ * @param {any} paths
+ */
+function validatePaths(paths) {
+  if (!Array.isArray(paths)) {
+    throw Error('paths must be array');
+  }
+
+  if (paths.some(path => typeof path !== 'string')) {
+    throw Error('paths must be array of strings');
+  }
 }
 
 /**
@@ -63,14 +77,8 @@ function handleSpread (paths, obj) {
  *   ],
  * };
  */
-module.exports = function getFlattenedArray (paths, obj) {
-  if (!Array.isArray(paths)) {
-    throw Error('paths must be array');
-  }
-
-  if (paths.some(path => typeof path !== 'string')) {
-    throw Error('paths must be an array of strings');
-  }
+module.exports = function getFlattenedArray(paths, obj) {
+  validatePaths(paths);
 
   let response = {};
   paths.forEach(path => {
