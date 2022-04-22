@@ -12,7 +12,7 @@ test('Test resolveUrl', () => {
     '//google.com': '//google.com',
   };
 
-  Object.keys(hash).map((url) => {
+  Object.keys(hash).forEach((url) => {
     equals(StringHelper.resolveUrl(url), hash[url]);
   });
 
@@ -28,7 +28,7 @@ test('Test ucfirst', () => {
     '1': '1',
   };
 
-  Object.keys(hash).map((word) => {
+  Object.keys(hash).forEach((word) => {
     equals(StringHelper.ucfirst(word), hash[word]);
     equals(StringHelper.capitalize(word), hash[word]);
   });
@@ -42,7 +42,7 @@ test('Test ucwords', () => {
     '1': '1',
   };
 
-  Object.keys(hash).map((word) => {
+  Object.keys(hash).forEach((word) => {
     equals(StringHelper.ucwords(word), hash[word]);
   });
 });
@@ -57,8 +57,8 @@ test('Test excerpt', () => {
     },
   };
 
-  Object.keys(hash).map(phrase => {
-    Object.keys(hash[phrase]).map(maxLength => {
+  Object.keys(hash).forEach(phrase => {
+    Object.keys(hash[phrase]).forEach(maxLength => {
       equals(StringHelper.excerpt(phrase, maxLength), hash[phrase][maxLength]);
     });
   });

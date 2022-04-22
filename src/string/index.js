@@ -72,7 +72,7 @@ module.exports = {
    * @memberof string
    */
   excerpt: function (text, maxLength) {
-    if (isNaN(maxLength)) {
+    if (Number.isNaN(maxLength)) {
       throw new Error('maxLength should be an integer');
     }
 
