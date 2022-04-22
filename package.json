@@ -21,11 +21,11 @@
     "lint:errors": "eslint --quiet ./src"
   },
   "devDependencies": {
-    "@types/jest": "^27.0.2",
-    "eslint": "^8.2.0",
+    "@types/jest": "^27.4.1",
+    "eslint": "^8.13.0",
     "eslint-config-google": "^0.14.0",
-    "jest": "^27.3.1",
-    "jsdoc": "^3.6.7",
+    "jest": "^27.5.1",
+    "jsdoc": "^3.6.10",
     "mockdate": "^3.0.5"
   }
 }
