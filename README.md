@@ -1,6 +1,6 @@
-[![Code Coverage](https://scrutinizer-ci.com/g/beeblebrox3/super-helpers/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/beeblebrox3/super-helpers/?branch=master)
-[![Build Status](https://scrutinizer-ci.com/g/beeblebrox3/super-helpers/badges/build.png?b=master)](https://scrutinizer-ci.com/g/beeblebrox3/super-helpers/build-status/master)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/beeblebrox3/super-helpers/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/beeblebrox3/super-helpers/?branch=master)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=beeblebrox3_super-helpers&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=beeblebrox3_super-helpers)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=beeblebrox3_super-helpers&metric=coverage)](https://sonarcloud.io/summary/new_code?id=beeblebrox3_super-helpers)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=beeblebrox3_super-helpers&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=beeblebrox3_super-helpers)
 [![Inline docs](http://inch-ci.org/github/beeblebrox3/super-helpers.svg?branch=master)](http://inch-ci.org/github/beeblebrox3/super-helpers)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fbeeblebrox3%2Fsuper-helpers.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fbeeblebrox3%2Fsuper-helpers?ref=badge_shield)
 
