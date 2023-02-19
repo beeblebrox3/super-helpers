@@ -1,6 +1,6 @@
 const getFlattened = require('./getFlattened');
 const setFlattened = require('./setFlattened');
-const {UNIVERSAL_UNDEFINED_VALUE_INDICATOR} = require('./private');
+const { UNIVERSAL_UNDEFINED_VALUE_INDICATOR } = require('./private');
 
 /**
  * @param {string[]} paths
@@ -8,7 +8,7 @@ const {UNIVERSAL_UNDEFINED_VALUE_INDICATOR} = require('./private');
  * @return {string[]|null}
  * @ignore
  */
-function handleSpread(paths, obj) {
+function handleSpread (paths, obj) {
   const firstPathSplitted = paths[0].split('.');
   const spreadPosition = firstPathSplitted.indexOf('*');
   if (spreadPosition === -1) {
@@ -32,7 +32,7 @@ function handleSpread(paths, obj) {
  * validate if paths are valid
  * @param {any} paths
  */
-function validatePaths(paths) {
+function validatePaths (paths) {
   if (!Array.isArray(paths)) {
     throw Error('paths must be array');
   }
@@ -77,7 +77,7 @@ function validatePaths(paths) {
  *   ],
  * };
  */
-module.exports = function getFlattenedArray(paths, obj) {
+module.exports = function getFlattenedArray (paths, obj) {
   validatePaths(paths);
 
   let response = {};
