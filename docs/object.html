@@ -418,6 +418,166 @@ collectionContains(fruits, { weight: v => v > 100 }); // will return true</code>
     
 
     
+    <h4 class="name" id=".firstKey"><span class="type-signature">(static) </span>firstKey<span class="signature">(obj)</span><span class="type-signature"> &rarr; {any}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Get first key of an object or null if it doesn't have keys
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>obj</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="object_firstKey.js.html">object/firstKey.js</a>, <a href="object_firstKey.js.html#line10">line 10</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">any</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>firstKey({ a: 2, b: 2 }) // 'a'</code></pre>
+
+
+
+        
+            
+
+    
+
+    
     <h4 class="name" id=".flatten"><span class="type-signature">(static) </span>flatten<span class="signature">(obj, separator<span class="signature-attributes">opt</span>, prefix<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Object}</span></h4>
     
 
@@ -838,166 +998,6 @@ isCyclic(obj) // true</code></pre>
     
 
     
-    <h4 class="name" id=".module.exports"><span class="type-signature">(static) </span>module.exports<span class="signature">(obj)</span><span class="type-signature"> &rarr; {*}</span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Get first key of an object or null if it doesn't have keys
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>obj</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="object_firstKey.js.html">object/firstKey.js</a>, <a href="object_firstKey.js.html#line10">line 10</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">*</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-
-    <h5>Example</h5>
-    
-    <pre class="prettyprint"><code>firstKey({ a: 2, b: 2 }) // 'a'</code></pre>
-
-
-
-        
-            
-
-    
-
-    
     <h4 class="name" id=".module.exports"><span class="type-signature">(static) </span>module.exports<span class="signature">(paths, obj, defaultValue<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {any}</span></h4>
     
 
@@ -1246,213 +1246,6 @@ getFirstFlattened(['a.c', 'a.b.c'], obj) // 2</code></pre>
     
 
     
-    <h4 class="name" id=".module.exports"><span class="type-signature">(static) </span>module.exports<span class="signature">(paths, obj)</span><span class="type-signature"> &rarr; {<a href="object.html">object</a>}</span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Extracts a fragment of an object, including nested properties and array support.
-Note: it doen´t work when the keys have '.'.
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>paths</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Array.&lt;<a href="string.html">string</a>></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">to extract a value from every object in a collection use '*'. eg: ['a.*.name']</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>obj</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="object.html">object</a></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="object_getFlattenedArray.js.html">object/getFlattenedArray.js</a>, <a href="object_getFlattenedArray.js.html#line80">line 80</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type"><a href="object.html">object</a></span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-
-    <h5>Example</h5>
-    
-    <pre class="prettyprint"><code>const input = {
-  name: "Xpto",
-  age: 77,
-  address: {
-    street: "first",
-    number: 88,
-  },
-  phones: [
-    { number: 1111111, code: 11 },
-    { number: 2222222, code: 22 },
-  ],
-};
-
-const res = getFlattenedArray(["name", "address.number", "phones.*.code"], input)
-
-// result
-{
-  name: "Xpto",
-  address: { number: 88 },
-  phones: [
-    { code: 11 },
-    { code: 22 },
-  ],
-};</code></pre>
-
-
-
-        
-            
-
-    
-
-    
     <h4 class="name" id=".module.exports"><span class="type-signature">(static) </span>module.exports<span class="signature">(path, obj, defaultValue)</span><span class="type-signature"> &rarr; {any}</span></h4>
     
 
@@ -1655,6 +1448,213 @@ getFlattened("a.b", a) // 1</code></pre>
     <pre class="prettyprint"><code>with default value
 const a = { a: { b: 1 } }
 getFlattened('a.c', a, 2020) // 2020</code></pre>
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id=".module.exports"><span class="type-signature">(static) </span>module.exports<span class="signature">(paths, obj)</span><span class="type-signature"> &rarr; {<a href="object.html">object</a>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Extracts a fragment of an object, including nested properties and array support.
+Note: it doen´t work when the keys have '.'.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>paths</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;<a href="string.html">string</a>></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">to extract a value from every object in a collection use '*'. eg: ['a.*.name']</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>obj</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="object.html">object</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="object_getFlattenedArray.js.html">object/getFlattenedArray.js</a>, <a href="object_getFlattenedArray.js.html#line80">line 80</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="object.html">object</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>const input = {
+  name: "Xpto",
+  age: 77,
+  address: {
+    street: "first",
+    number: 88,
+  },
+  phones: [
+    { number: 1111111, code: 11 },
+    { number: 2222222, code: 22 },
+  ],
+};
+
+const res = getFlattenedArray(["name", "address.number", "phones.*.code"], input)
+
+// result
+{
+  name: "Xpto",
+  address: { number: 88 },
+  phones: [
+    { code: 11 },
+    { code: 22 },
+  ],
+};</code></pre>
 
 
 
@@ -1926,7 +1926,7 @@ Note: for array on the top level, obj must be an array</li>
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Fri Apr 22 2022 09:22:28 GMT-0300 (Brasilia Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.1</a> on Sun Feb 19 2023 10:02:39 GMT-0300 (Brasilia Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>
